@@ -1,0 +1,562 @@
+<div>
+
+    <!-- Hero Start client -->
+    <div class="container-fluid p-0 hero-header bg-light mb-5">
+        <div class="container p-0">
+            <div class="row g-0 align-items-center">
+                <div class="col-lg-6 hero-header-text py-5">
+                    <div class="py-5 px-3 ps-lg-0">
+                        <h1 class="font-dancing-script text-primary animated slideInLeft">Bem-vindo(a) a</h1>
+                        <h1 class="display-1 mb-4 animated slideInLeft">Maison Mary Avantguarde</h1>
+                        <div class="row g-4 animated slideInLeft">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square btn btn-primary flex-shrink-0">
+                                        <i class="fa fa-phone text-dark"></i>
+                                    </div>
+                                    <div class="px-3">
+                                        <h5 class="text-primary mb-0">Tell</h5>
+                                        <p class="fs-5 text-dark mb-0">+244 973 087 336</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square btn btn-primary flex-shrink-0">
+                                        <i class="fa fa-envelope text-dark"></i>
+                                    </div>
+                                    <div class="px-3">
+                                        <h5 class="text-primary mb-0">Envie-nos um e-mail</h5>
+                                        <p class="fs-5 text-dark mb-0">Maison Mary</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class=" animated fadeIn">
+                        <div class="slider-container">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide imagem-container" v-for="(slide, index) in slides"
+                                        :key="index">
+                                        <img :src="slide.img" class="slide-img" alt="Beauty Salon">
+                                        <div class="content">
+                                            <span>{{ slide.subtitle }}</span>
+                                            <h2>{{ slide.title }}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="custom-navigation">
+                                <button class="nav-btn prev-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                                        <polyline points="12 19 5 12 12 5"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="nav-btn next-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="video-box mb-3">
+                        <video controls autoplay muted loop>
+                            <source src="./assets/img/sobre.mp4" type="video/mp4">
+                            O seu navegador não suporta vídeo HTML5.
+                        </video>
+                    </div>
+                    <div class="d-flex align-items-center bg-light">
+                        <div class="btn-square flex-shrink-0 bg-primary" style="width: 100px; height: 100px;">
+                            <i class="fa fa-phone fa-2x text-dark"></i>
+                        </div>
+                        <div class="px-3">
+                            <h3>+244 973 087 336</h3>
+                            <span>Ligue-nos diretamente, 24 horas por dia, 7 dias por semana.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="font-dancing-script text-primary">Sobre Nós</h1>
+                    <h1 class="mb-5">Beleza • Confiança • Elegância</h1>
+                    <p class="mb-4">A Maison Mary Avantguarde é um espaço dedicado à beleza, bem-estar e autoestima,
+                        criado para oferecer experiências únicas e serviços de alta qualidade.</p>
+                    <div class="row g-3 mb-5">
+                        <div class="col-sm-6">
+                            <div class="bg-light text-center p-4">
+                                <i class="fas fa-calendar-alt fa-4x text-primary"></i>
+                                <h1 class="display-5" data-toggle="counter-up">25</h1>
+                                <p class="text-dark text-uppercase mb-0"> Anos de experiência</p>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="bg-light text-center p-4">
+                                <i class="fas fa-users fa-4x text-primary"></i>
+                                <h1 class="display-5" data-toggle="counter-up">899</h1>
+                                <p class="text-dark text-uppercase mb-0">Clientes satisfeitos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary text-uppercase px-5 py-3" href="#/sobre">Saber mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid service py-5">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="font-dancing-script text-primary">Nossos Serviços</h1>
+                <h1 class="mb-5">Tratamentos personalizados para você</h1>
+            </div>
+            <div class="row g-4 g-md-0 text-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 border-bottom border-end wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid" src="./assets/img/cabelo.png" alt="">
+                        <h3 class="mb-3">Cabelo</h3>
+                        <p class="mb-3">
+                             
+                        </p>
+                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 border-bottom border-lg-end wow fadeIn" data-wow-delay="0.3s">
+                        <img class="img-fluid" src="./assets/img/makeup.png" alt="">
+                        <h3 class="mb-3">Maquilhagem </h3>
+                      <p class="mb-3">
+                             
+                        </p>
+                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 border-bottom border-end border-lg-end-0 wow fadeIn"
+                        data-wow-delay="0.5s">
+                        <img class="img-fluid" src="./assets/img/manicure.png" alt="">
+                        <h3 class="mb-3">Unhas</h3>
+                          <p class="mb-3">
+                             
+                        </p>
+                        <a class="btn btn-sm btn-primary text-uppercase my-2" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 border-bottom border-lg-bottom-0 border-lg-end wow fadeIn"
+                        data-wow-delay="0.1s">
+                        <img class="img-fluid" src="./assets/img/estetica.png" alt="">
+                        <h3 class="mb-3"> Estética & Face </h3>
+                        <p class="mb-3">
+                             
+                        </p>
+                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 border-end wow fadeIn" data-wow-delay="0.3s">
+                        <img class="img-fluid" src="./assets/img/massage.png" alt="">
+                        <h3 class="mb-3">Massagens & Wellness</h3>
+                       <p class="mb-3">
+                             
+                        </p>
+                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item h-100 p-4 wow fadeIn" data-wow-delay="0.5s">
+                        <img class="img-fluid" src="./assets/img/skin-care.png" alt="">
+                        <h3 class="mb-3">Emagrecimento &Body Contour</h3>
+                   
+                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+
+
+    <section class="hero-section d-flex align-items-center px-3 px-md-5">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-6">
+
+                    <div class="hero-content text-white">
+
+                        <span class="subtitle text-uppercase fw-bold mb-4 d-block animate-item anim-1">
+                            {{ subtitle }}
+                        </span>
+
+                        <h1 class="title fw-normal mb-4 animate-item anim-2" v-html="formattedTitle"></h1>
+
+                        <p class="description fw-light mb-5 lh-base opacity-75 animate-item anim-3">
+                            {{ description }}
+                        </p>
+
+                        <div class="d-grid gap-3 col-11 col-sm-7 col-md-6 col-lg-6 mx-0 animate-item anim-4">
+                            <button class="btn btn-light btn-custom text-dark" @click="learnMoreAction">
+                                Saber mais
+                            </button>
+                            <button class="btn btn-outline-light btn-custom" @click="joinTeamAction">
+                                Faça Já a Sua Marcação
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-overlay"></div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- Preços Start -->
+    <div class="container-fluid price px-0">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center h-100 bg-primary p-5">
+                    <div class="wow fadeIn" data-wow-delay="0.3s">
+                        <h1 class="font-dancing-script text-white">Preços</h1>
+                        <h1 class="mb-0">SPA & Salão de beleza</h1>
+                        <h1 class="display-1 text-uppercase mb-5" style="letter-spacing: 10px;">Preços</h1>
+                        <div class="row g-4 align-items-center">
+
+                            <div class="col-lg-6">
+                                <p>Acompanhe as promoções e ofertas especiais da Maison Mary Avantguarde. Aproveite
+                                    descontos e condições exclusivas nos nossos serviços de beleza, estética e
+                                    bem-estar. ✨.</p>
+                                <a class="btn btn-dark" href="">Obtenha 20% de desconto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="h-100 bg-dark p-5">
+                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-1.jpg" alt="">
+                        <div class="text-end px-4">
+                            <h6 class="text-uppercase text-primary">Penteados sociais e noivas</h6>
+                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                        </div>
+                    </div>
+                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.2s">
+                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-2.jpg" alt="">
+                        <div class="text-end px-4">
+                            <h6 class="text-uppercase text-primary">Massagem relaxante</h6>
+                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                        </div>
+                    </div>
+                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.3s">
+                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-3.jpg" alt="">
+                        <div class="text-end px-4">
+                            <h6 class="text-uppercase text-primary">Limpeza facial profunda</h6>
+                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                        </div>
+                    </div>
+                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.4s">
+                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-4.jpg" alt="">
+                        <div class="text-end px-4">
+                            <h6 class="text-uppercase text-primary">Manicure SPA</h6>
+                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                        </div>
+                    </div>
+                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.5s">
+                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-5.jpg" alt="">
+                        <div class="text-end px-4">
+                            <h6 class="text-uppercase text-primary">Mega Hair Premium</h6>
+                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing End -->
+
+
+    <!-- Gallery Start -->
+    <div class="container-fluid gallery py-5">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.2s">
+                <h1 class="font-dancing-script text-primary">Galeria</h1>
+                <h1 class="mb-5">Explore nossa galeria</h1>
+            </div>
+            <div class="row g-0">
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-2.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-2.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-1"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-5.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-5.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-3.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-3.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-4.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-4.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-4"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-11.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-11.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-5"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
+                    <div class="gallery-item h-100">
+                        <img src="./assets/img/galeria/galeria-7.jpeg" class="img-fluid w-100 h-100" alt="">
+                        <div class="gallery-icon">
+                            <a href="./assets/img/galeria/galeria-7.jpeg" class="btn btn-primary btn-lg-square"
+                                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Centralizado">
+                <a style="text-align: center;" class="btn btn-primary text-uppercase px-5 py-3" href="#/galeria">Saber
+                    mais</a>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+
+
+
+
+
+    <!-- Team Start -->
+    <div class="container-fluid overflow-hidden py-5">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.2s">
+                <h1 class="font-dancing-script text-primary">Membros da Equipe</h1>
+                <h1 class="mb-5">Nossos Especialistas Experientes</h1>
+            </div>
+ 
+
+            <div class="row g-4 team">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="team-item position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="./assets/img/team-1.jpg" alt="">
+                        <div class="team-overlay">
+                            <p class="text-primary mb-1">Hair Specialist</p>
+                            <h4>Lily Taylor</h4>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="team-item position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="./assets/img/team-2.jpg" alt="">
+                        <div class="team-overlay">
+                            <p class="text-primary mb-1">Nail Designer</p>
+                            <h4>Olivia Smith</h4>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="team-item position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="./assets/img/team-3.jpg" alt="">
+                        <div class="team-overlay">
+                            <p class="text-primary mb-1">Beauty Specialist</p>
+                            <h4>Ava Brown</h4>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="btn btn-dark btn-sm-square border-2" href="">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="team-item position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="./assets/img/team-4.jpg" alt="">
+                        <div class="team-overlay">
+                            <p class="text-primary mb-1">Spa Specialist</p>
+                            <h4>Amelia Jones</h4>
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="btn btn-dark btn-sm-square border-2" href="">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.2s">
+                <h1 class="font-dancing-script text-primary">Depoimentos</h1>
+                <h1 class="mb-5">O que os clientes dizem!</h1>
+            </div>
+
+            <div class="container">
+                <div class="swiper mySwiper_textemunha">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide" v-for="(item, index) in testimonials" :key="index">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">“</div>
+                                <p class="testimonial-text">{{ item.text }}</p>
+                                <div class="client-img-container">
+                                    <img :src="item.image" :alt="item.name">
+                                </div>
+                                <h4 class="client-name">{{ item.name }}</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="navigation-wrapper">
+                    <button class="nav-btn2 prev-btn">&#10094;</button>
+                    <button class="nav-btn2 next-btn">&#10095;</button>
+                </div>
+            </div>
+
+ 
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog p-0 mt-5">
+        <div class="row g-0">
+            <div class="col-md-6 col-lg-3 ">
+                <div class="h-100 d-flex flex-column justify-content-center bg-primary py-5 px-4">
+                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>Jan 01, 2045 | <i
+                            class="fa fa-folder-open text-dark me-1"></i>Hair Salon</p>
+                    <h3 class="mb-3">How to Extend The Life of Your Haircolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget libero lobortis, auctor
+                        nisi quis, aliquet nunc. Nam dapibus interdum lacus.</p>
+
+                    <a class="btn btn-dark align-self-start text-uppercase" href="">Leia mais <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                <div class="h-100">
+                    <img class="img-fluid w-100 h-100" src="./assets/img/blog-1.jpg" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                <div class="h-100 d-flex flex-column justify-content-center bg-primary py-5 px-4">
+                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>Jan 01, 2045 | <i
+                            class="fa fa-folder-open text-dark me-1"></i>Hair Salon</p>
+                    <h3 class="mb-3">How to Extend The Life of Your Haircolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget libero lobortis, auctor
+                        nisi quis, aliquet nunc. Nam dapibus interdum lacus.</p>
+                    <a class="btn btn-dark align-self-start text-uppercase" href="">Leia mais <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                <div class="h-100">
+                    <img class="img-fluid w-100 h-100" src="./assets/img/blog-2.jpg" alt="" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+      
+
+
+ 
+
+</div>
