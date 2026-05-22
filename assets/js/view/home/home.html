@@ -1,6 +1,6 @@
 <div>
 
-    <!-- Hero Start client -->
+    <!-- Hero Start  embros da Equip -->
     <div class="container-fluid p-0 hero-header bg-light mb-5">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
@@ -140,7 +140,7 @@
                         <img class="img-fluid" src="./assets/img/cabelo.png" alt="">
                         <h3 class="mb-3">Cabelo</h3>
                         <p class="mb-3">
-                             
+
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -150,8 +150,8 @@
                     <div class="service-item h-100 p-4 border-bottom border-lg-end wow fadeIn" data-wow-delay="0.3s">
                         <img class="img-fluid" src="./assets/img/makeup.png" alt="">
                         <h3 class="mb-3">Maquilhagem </h3>
-                      <p class="mb-3">
-                             
+                        <p class="mb-3">
+
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -162,8 +162,8 @@
                         data-wow-delay="0.5s">
                         <img class="img-fluid" src="./assets/img/manicure.png" alt="">
                         <h3 class="mb-3">Unhas</h3>
-                          <p class="mb-3">
-                             
+                        <p class="mb-3">
+
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase my-2" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -175,7 +175,7 @@
                         <img class="img-fluid" src="./assets/img/estetica.png" alt="">
                         <h3 class="mb-3"> Estética & Face </h3>
                         <p class="mb-3">
-                             
+
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -185,8 +185,8 @@
                     <div class="service-item h-100 p-4 border-end wow fadeIn" data-wow-delay="0.3s">
                         <img class="img-fluid" src="./assets/img/massage.png" alt="">
                         <h3 class="mb-3">Massagens & Wellness</h3>
-                       <p class="mb-3">
-                             
+                        <p class="mb-3">
+
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -196,7 +196,7 @@
                     <div class="service-item h-100 p-4 wow fadeIn" data-wow-delay="0.5s">
                         <img class="img-fluid" src="./assets/img/skin-care.png" alt="">
                         <h3 class="mb-3">Emagrecimento &Body Contour</h3>
-                   
+
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
@@ -231,12 +231,12 @@
                         </p>
 
                         <div class="d-grid gap-3 col-11 col-sm-7 col-md-6 col-lg-6 mx-0 animate-item anim-4">
-                            <button class="btn btn-light btn-custom text-dark" @click="learnMoreAction">
+                            <button class="btn btn-light btn-custom text-dark"  >
                                 Saber mais
                             </button>
-                            <button class="btn btn-outline-light btn-custom" @click="joinTeamAction">
+                            <a class="btn btn-outline-light btn-custom" href="#" @click.prevent="scrollTo('marcacao')" >
                                 Faça Já a Sua Marcação
-                            </button>
+                            </a>
                         </div>
 
                     </div>
@@ -398,80 +398,121 @@
 
 
 
-    <!-- Team Start -->
+    <section class="hero-section2" id="marcacao">
+        <div class="overlay"></div>
+        <div class="appointment-container">
+            <h2>Agendar uma consulta</h2>
+            <p class="mb-4" style="color: #fff;">Preencha os seus dados e escolha o serviço pretendido. A nossa equipa
+                entrará em contacto consigo para confirmar a sua marcação.</p>
+            <form class="appointment-form">
+                <div class="form-group">
+                    <input v-model="dataConsulta" type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <input v-model="email" type="email" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <input v-model="nome" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
+                        onblur="(this.type='text')">
+                </div>
+                <div class="form-group">
+                    <input v-model="horaConsulta" type="text" placeholder="Selecione a hora" onfocus="(this.type='time')"
+                        onblur="(this.type='text')">
+                </div>
+                <div class="form-group">
+                    <select v-model="servico" required class="form-controlxx">
+                        <option value="">Selecione um serviço</option>
+                        <option v-for="item in servicos" :key="item" :value="item">
+                            {{ item }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Marque uma consulta</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="info-section container">
+        <div class="info-container">
+            <div class="image-block">
+                <img src="./assets/img/galeria/galeria-7.jpeg" alt="Tratamento Facial Spa">
+            </div>
+
+            <div class="content-card">
+                <span class="badge">HORÁRIO DE FUNCIONAMENTO</span>
+                <h2>Melhor Zona de Relaxamento e Spa</h2>
+                <p class="description">
+                    Na Maison Mary Avantguarde, oferecemos um atendimento profissional e personalizado para garantir a
+                    melhor experiência de beleza e bem-estar.
+                </p>
+
+                <ul class="hours-list">
+                    <li>
+                        <span class="circle-icon"></span>
+                        <span class="day">Segunda – Sexta :</span>
+                        <span class="time">09h00 – 19h00</span>
+                    </li>
+                    <li>
+                        <span class="circle-icon"></span>
+                        <span class="day">Sábado :</span>
+                        <span class="time">09h00 – 15h00</span>
+                    </li>
+                    <li>
+                        <span class="circle-icon"></span>
+                        <span class="day">Domingo :</span>
+                        <span class="time">Encerrado</span>
+                    </li>
+                </ul>
+
+                <a href="#" class="btn-book">Reserve já</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Nossos fundadores -->
     <div class="container-fluid overflow-hidden py-5">
         <div class="container">
             <div class="text-center wow fadeIn" data-wow-delay="0.2s">
-                <h1 class="font-dancing-script text-primary">Membros da Equipe</h1>
-                <h1 class="mb-5">Nossos Especialistas Experientes</h1>
+                <h1 class="font-dancing-script text-primary">Fundadores</h1>
+                <h1 class="mb-5">Fundadores e Menbros do Conselho</h1>
             </div>
- 
+
 
             <div class="row g-4 team">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="./assets/img/team-1.jpg" alt="">
-                        <div class="team-overlay">
-                            <p class="text-primary mb-1">Hair Specialist</p>
-                            <h4>Lily Taylor</h4>
-                        
-                        </div>
+                        <img class="img-fluid w-100" src="./assets/img/fundador-1.jpeg" alt="">
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="./assets/img/team-2.jpg" alt="">
-                        <div class="team-overlay">
-                            <p class="text-primary mb-1">Nail Designer</p>
-                            <h4>Olivia Smith</h4>
-                           
-                        </div>
+                        <img class="img-fluid w-100" src="./assets/img/fundador-2.jpeg" alt="">
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="./assets/img/team-3.jpg" alt="">
-                        <div class="team-overlay">
-                            <p class="text-primary mb-1">Beauty Specialist</p>
-                            <h4>Ava Brown</h4>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="btn btn-dark btn-sm-square border-2" href="">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <img class="img-fluid w-100" src="./assets/img/fundador-3.jpeg" alt="">
+
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="./assets/img/team-4.jpg" alt="">
-                        <div class="team-overlay">
-                            <p class="text-primary mb-1">Spa Specialist</p>
-                            <h4>Amelia Jones</h4>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a class="btn btn-dark btn-sm-square border-2 me-3" href="">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a class="btn btn-dark btn-sm-square border-2" href="">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <img class="img-fluid w-100" src="./assets/img/fundador-4.jpeg" alt="">
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!--  Nossos fundadores End -->
+
 
 
     <!-- Testimonial Start -->
@@ -506,7 +547,7 @@
                 </div>
             </div>
 
- 
+
         </div>
     </div>
     <!-- Testimonial End -->
@@ -517,11 +558,11 @@
         <div class="row g-0">
             <div class="col-md-6 col-lg-3 ">
                 <div class="h-100 d-flex flex-column justify-content-center bg-primary py-5 px-4">
-                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>Jan 01, 2045 | <i
-                            class="fa fa-folder-open text-dark me-1"></i>Hair Salon</p>
-                    <h3 class="mb-3">How to Extend The Life of Your Haircolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget libero lobortis, auctor
-                        nisi quis, aliquet nunc. Nam dapibus interdum lacus.</p>
+                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>21 Maio 2026 | <i
+                            class="fa fa-folder-open text-dark me-1"></i>Cabelo & Tranças</p>
+                    <h3 class="mb-3">Como Cuidar das Suas Tranças para Durarem Mais Tempo</h3>
+                    <p>Descubra os cuidados essenciais para manter as suas tranças bonitas, limpas e protegidas,
+                        prolongando a sua durabilidade e preservando a saúde do seu cabelo.</p>
 
                     <a class="btn btn-dark align-self-start text-uppercase" href="">Leia mais <i
                             class="bi bi-arrow-right"></i></a>
@@ -536,11 +577,11 @@
 
             <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                 <div class="h-100 d-flex flex-column justify-content-center bg-primary py-5 px-4">
-                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>Jan 01, 2045 | <i
-                            class="fa fa-folder-open text-dark me-1"></i>Hair Salon</p>
-                    <h3 class="mb-3">How to Extend The Life of Your Haircolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget libero lobortis, auctor
-                        nisi quis, aliquet nunc. Nam dapibus interdum lacus.</p>
+                    <p class="mb-2"><i class="fa fa-calendar-alt text-dark me-1"></i>18 Maio 2026 | <i
+                            class="fa fa-folder-open text-dark me-1"></i>Estética Facial</p>
+                    <h3 class="mb-3">Segredos para uma Pele Saudável e Radiante</h3>
+                    <p>Conheça hábitos simples e eficazes que ajudam a manter a pele hidratada, luminosa e protegida
+                        contra os efeitos do dia a dia.</p>
                     <a class="btn btn-dark align-self-start text-uppercase" href="">Leia mais <i
                             class="bi bi-arrow-right"></i></a>
                 </div>
@@ -554,9 +595,9 @@
     </div>
     <!-- Blog End -->
 
-      
 
 
- 
+
+
 
 </div>

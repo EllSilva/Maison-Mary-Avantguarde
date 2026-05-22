@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário WhatsApp</title>
+
+    <!-- Vue.js 2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <form @submit.prevent="enviarWhatsApp">
+
+            <input type="text" v-model="nome" placeholder="Nome" required>
+
+            <input type="email" v-model="email" placeholder="E-mail" required>
+
+            <input type="tel" v-model="telefone" placeholder="Telefone" required>
+
+            <textarea v-model="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+
+            <button type="submit">
+                Enviar para WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+
+            data: {
+                nome: '',
+                email: '',
+                telefone: '',
+                mensagem: ''
+            },
+
+            methods: {
+                enviarWhatsApp() {
+
+                    const numero = '244923456789'; // Seu número
+
+                    const texto =
+`*📅 NOVO AGENDAMENTO*
+
+👤 Nome: ${this.nome}
+📧 E-mail: ${this.email}
+📞 Telefone: ${this.telefone}
+
+💆 Serviço: ${this.servico}
+
+📅 Data: ${this.dataConsulta}
+🕒 Hora: ${this.horaConsulta}
+
+💬 Mensagem:
+${this.mensagem}`;
+
+                    const url =
+                        `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+                    window.open(url, '_blank');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

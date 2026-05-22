@@ -1,4 +1,5 @@
-/********** Template CSS owl-carousel **********/
+/********** Template CSS page-header **********/
+ 
  
 /*** Spinner ***/
 #spinner {
@@ -262,10 +263,16 @@
 }
 
 .page-header {
+    /***  background: url(../img/page-header.jpg) center center no-repeat; ***/
     background: url(../img/page-header.jpg) center center no-repeat;
     background-size: contain;
 }
 
+.page-header-sobre {
+    /***  background: url(../img/page-header.jpg) center center no-repeat; ***/
+    background: url(../img/page-header-sobre.jpg) center center no-repeat;
+    background-size: contain;
+}
 
 /*** Service ***/
 @media (max-width: 768px) {

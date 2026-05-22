@@ -3,10 +3,30 @@ import get_template from "../../components/get_template.js";
 export default {
     data: function () {
         return {
+              nome: '',
+    email: '',
+    telefone: '',
+    servico: '',
+    dataConsulta: '',
+    horaConsulta: '',
+    mensagem: '',
+    servicos: [
+        'Massagem Relaxante',
+        'Massagem Terapêutica',
+        'Limpeza de Pele',
+        'Tratamento Facial',
+        'Manicure',
+        'Pedicure',
+        'Cabeleireiro',
+        'Maquilhagem',
+        'Design de Sobrancelhas',
+        'SPA Completo'
+    ],
+    
             subtitle: 'Maison Mary Avantguarde',
             title: 'Beleza. Confiança. Elegância.',
             description: 'Realce a sua beleza, renove a sua confiança e desfrute de momentos únicos de bem-estar. Aproveite as nossas ofertas especiais e permita-se viver uma experiência de cuidado, sofisticação e elegância. 💖✨',
- 
+
 
             slides: [
                 {
@@ -34,36 +54,36 @@ export default {
             testimonials: [
                 {
                     text: "Adorei o atendimento! Fiz tranças e o resultado ficou perfeito. Muito profissionais e ambiente acolhedor.",
-                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-1.jpg",
                     name: "Ana Silva",
                 },
                 {
                     text: "Serviço de unhas excelente! Muito capricho e atenção aos detalhes. Recomendo bastante.",
-                    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-2.jpg",
                     name: "Maria João",
                 },
                 {
                     text: "Fiz massagem relaxante e saí totalmente renovada. Experiência incrível!",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-3.jpg",
                     name: "Carla Pedro",
                 }, {
                     text: "Gostei muito do serviço de estética facial, minha pele ficou muito mais limpa e brilhante.",
-                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-4.jpg",
                     name: "Sónia Ramos",
                 },
                 {
                     text: "Atendimento rápido e muito simpático. Fiz cabelo e unhas no mesmo dia e adorei o resultado.",
-                    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-5.jpg",
                     name: "Patrícia Lemos",
                 },
                 {
-                    text: "Maquilhagem impecável para evento especial. Durou a noite toda sem falhas!",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+                    text: "Maquilhagem impecável para evento especial. Durou a noite toda sem falhas, Receber varios elogios",
+                    image: "./assets/img/testimonial-6.jpg",
                     name: "Beatriz António",
                 },
                 {
                     text: "Melhor salão da zona! Sempre saio satisfeita com as tranças e o atendimento.",
-                    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80",
+                    image: "./assets/img/testimonial-7.jpg",
                     name: "Joana Miguel",
                 }
             ]
@@ -77,12 +97,69 @@ export default {
         }
     },
     methods: {
-        learnMoreAction: function () {
-            console.log('Botão Learn More clicado (Vue 2)');
+
+        enviarWhatsApp() {
+
+            const numero = '244923456789'; // Seu número
+
+            const texto =
+                `*📅 NOVO AGENDAMENTO*
+
+👤 Nome: ${this.nome}
+📧 E-mail: ${this.email}
+📞 Telefone: ${this.telefone}
+
+💆 Serviço: ${this.servico}
+
+📅 Data: ${this.dataConsulta}
+🕒 Hora: ${this.horaConsulta}
+
+💬 Mensagem:
+${this.mensagem}`;
+
+            const url =
+                `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+            window.open(url, '_blank');
         },
-        joinTeamAction: function () {
-            console.log('Botão Join Our Team clicado (Vue 2)');
+
+               scrollTo(id) {
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            const start = window.scrollY;
+            const end = target.offsetTop - 60;
+            const distance = end - start;
+
+            let startTime = null;
+
+            const duration = 1200; // velocidade do scroll
+
+            function easeInOutCubic(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            }
+
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutCubic(timeElapsed, start, distance, duration);
+
+                window.scrollTo(0, run);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
         }
+    
+
+      
     },
 
     async mounted() {
