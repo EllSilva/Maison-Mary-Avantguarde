@@ -1,6 +1,6 @@
 <div>
 
-    <!-- Hero Start  embros da Equip -->
+    <!-- Hero Start  embros da Nossos Serviços -->
     <div class="container-fluid p-0 hero-header bg-light mb-5">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
@@ -16,19 +16,16 @@
                                     </div>
                                     <div class="px-3">
                                         <h5 class="text-primary mb-0">Tell</h5>
-                                        <p class="fs-5 text-dark mb-0">+244 973 087 336</p>
+                                        <p class="fs-5 text-dark mb-0">+244 973087336</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="btn-square btn btn-primary flex-shrink-0">
-                                        <i class="fa fa-envelope text-dark"></i>
+                                    <div class=" btn btn-primary flex-shrink-0"  href="#" @click.prevent="scrollTo('marcacao')">
+                                         Agenda Marcação   
                                     </div>
-                                    <div class="px-3">
-                                        <h5 class="text-primary mb-0">Envie-nos um e-mail</h5>
-                                        <p class="fs-5 text-dark mb-0">Maison Mary</p>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -88,12 +85,11 @@
                         </video>
                     </div>
                     <div class="d-flex align-items-center bg-light">
-                        <div class="btn-square flex-shrink-0 bg-primary" style="width: 100px; height: 100px;">
+                        <div class="btn-square flex-shrink-0 bg-primary" style="width: 80px; height: 80px;">
                             <i class="fa fa-phone fa-2x text-dark"></i>
                         </div>
                         <div class="px-3">
                             <h3>+244 973 087 336</h3>
-                            <span>Ligue-nos diretamente, 24 horas por dia, 7 dias por semana.</span>
                         </div>
                     </div>
                 </div>
@@ -226,14 +222,14 @@
 
                         <h1 class="title fw-normal mb-4 animate-item anim-2" v-html="formattedTitle"></h1>
 
-                        <p class="description fw-light mb-5 lh-base opacity-75 animate-item anim-3">
+                        <p class="description fw-light mb-5 lh-base opacity-75 animate-item anim-3 text-white">
                             {{ description }}
                         </p>
 
                         <div class="d-grid gap-3 col-11 col-sm-7 col-md-6 col-lg-6 mx-0 animate-item anim-4">
-                            <button class="btn btn-light btn-custom text-dark"  >
+                            <a class="btn btn-light btn-custom text-dark" href="#/sobre" >
                                 Saber mais
-                            </button>
+                            </a>
                             <a class="btn btn-outline-light btn-custom" href="#" @click.prevent="scrollTo('marcacao')" >
                                 Faça Já a Sua Marcação
                             </a>
@@ -404,15 +400,15 @@
             <h2>Agendar uma consulta</h2>
             <p class="mb-4" style="color: #fff;">Preencha os seus dados e escolha o serviço pretendido. A nossa equipa
                 entrará em contacto consigo para confirmar a sua marcação.</p>
-            <form class="appointment-form">
+            <form class="appointment-form" @submit.prevent="enviarWhatsApp"> 
                 <div class="form-group">
-                    <input v-model="dataConsulta" type="text" placeholder="Seu nome" required>
+                    <input v-model="nome" type="text" placeholder="Seu nome" required>
                 </div>
                 <div class="form-group">
                     <input v-model="email" type="email" placeholder="Seu e-mail" required>
                 </div>
                 <div class="form-group">
-                    <input v-model="nome" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
+                    <input v-model="dataConsulta" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
                         onblur="(this.type='text')">
                 </div>
                 <div class="form-group">
@@ -479,7 +475,7 @@
         <div class="container">
             <div class="text-center wow fadeIn" data-wow-delay="0.2s">
                 <h1 class="font-dancing-script text-primary">Fundadores</h1>
-                <h1 class="mb-5">Fundadores e Menbros do Conselho</h1>
+                <h1 class="mb-5">Fundadores e Membro do Conselho</h1>
             </div>
 
 

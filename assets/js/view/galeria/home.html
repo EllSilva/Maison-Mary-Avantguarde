@@ -23,10 +23,23 @@
         <h1 class="font-dancing-script text-primary">Galeria</h1>
         <h1 class="mb-5">Explore Nossa Galeria</h1>
       </div>
+
+      <div class="fotos_galeria">
+
+        <nav class="nav-container">
+          <div class=" ">
+            <a class="btn btn-primary " v-for="(item, index) in menuItems" :key="index"
+              :class="['nav-item', { active: activeIndex === index }]" @click="setActive(index)">
+              {{ item }}
+            </a>
+
+          </div>
+        </nav>
+      </div>
+
+
       <div class="row g-0">
-
-
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-2.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -35,7 +48,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 2">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-5.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -44,25 +57,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.6s">
-          <div class="gallery-item h-100">
-            <img src="./assets/img/galeria/galeria-3.jpeg" class="img-fluid w-100 h-100" alt="">
-            <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-3.jpeg" class="btn btn-primary btn-lg-square"
-                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s">
-          <div class="gallery-item h-100">
-            <img src="./assets/img/galeria/galeria-4.jpeg" class="img-fluid w-100 h-100" alt="">
-            <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-4.jpeg" class="btn btn-primary btn-lg-square"
-                data-lightbox="Gallery-4"><i class="fa fa-eye"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+         
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-11.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -71,7 +67,16 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-48.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-48.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-7.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -82,7 +87,47 @@
         </div>
 
 
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.3s" v-if="activeIndex === 0 || activeIndex === 3">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-41.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-41.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-1"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.3s" v-if="activeIndex === 0 || activeIndex === 3">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-42.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-42.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-1"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.3s" v-if="activeIndex === 0 || activeIndex === 3">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-43.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-43.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-1"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.3s" v-if="activeIndex === 0 || activeIndex === 3">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-44.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-44.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-1"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-15.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -91,7 +136,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-14.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -100,9 +145,9 @@
             </div>
           </div>
         </div>
- 
 
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s">
+
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-16.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -111,43 +156,43 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
-            <img src="./assets/img/galeria/galeria-19.jpeg" class="img-fluid w-100 h-100" alt="">
+            <img src="./assets/img/galeria/galeria-50.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-19.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-2"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-50.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.6s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-34.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-34.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-3"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-34.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 2">
           <div class="gallery-item h-100">
-            <img src="./assets/img/galeria/galeria-13.jpeg" class="img-fluid w-100 h-100" alt="">
+            <img src="./assets/img/galeria/galeria-49.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-13.jpeg" class="btn btn-primary btn-lg-square"
+              <a href="./assets/img/galeria/galeria-49.jpeg" class="btn btn-primary btn-lg-square"
                 data-lightbox="Gallery-4"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-33.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-33.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-5"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-33.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-5"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-9.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -157,27 +202,27 @@
           </div>
         </div>
 
-        
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-20.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-20.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-2"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-20.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.6s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-21.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-21.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-3"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-21.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-    
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s">
+
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-22.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -186,36 +231,118 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-23.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-23.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-5"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-23.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-5"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
 
-         
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s">
+
+
+
+
+
+
+
+
+
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-37.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-37.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-38.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-38.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-39.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-39.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-4"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-6.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-6.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-5"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-25.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-25.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-27.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-27.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 2">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-28.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-28.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.4s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-36.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-36.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-2"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-36.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-2"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 wow fadeIn" data-wow-delay="0.6s">
+        <div class="col-md-3 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
-            <img src="./assets/img/galeria/galeria-54.jpeg" class="img-fluid w-100 h-100" alt="">
+            <img src="./assets/img/galeria/galeria-29.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
-              <a href="./assets/img/galeria/galeria-54.jpeg" class="btn btn-primary btn-lg-square" data-lightbox="Gallery-3"><i
-                  class="fa fa-eye"></i></a>
+              <a href="./assets/img/galeria/galeria-29.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-3"><i class="fa fa-eye"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
+        <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
           <div class="gallery-item h-100">
             <img src="./assets/img/galeria/galeria-47.jpeg" class="img-fluid w-100 h-100" alt="">
             <div class="gallery-icon">
@@ -224,6 +351,39 @@
             </div>
           </div>
         </div>
+
+
+
+
+        <div class="col-md-4 wow fadeIn" data-wow-delay="0.2s" v-if="activeIndex === 0 || activeIndex === 2">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-26.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-26.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-45.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-45.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 wow fadeIn" data-wow-delay="0.1s" v-if="activeIndex === 0 || activeIndex === 1">
+          <div class="gallery-item h-100">
+            <img src="./assets/img/galeria/galeria-46.jpeg" class="img-fluid w-100 h-100" alt="">
+            <div class="gallery-icon">
+              <a href="./assets/img/galeria/galeria-46.jpeg" class="btn btn-primary btn-lg-square"
+                data-lightbox="Gallery-6"><i class="fa fa-eye"></i></a>
+            </div>
+          </div>
+        </div>
+     
+
       </div>
     </div>
   </div>

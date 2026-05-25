@@ -1,248 +1,85 @@
-/* --- SEÇÃO 1: AGENDAMENTO (HERO) --- */
-.hero-section2 {
-    position: relative;
+   :root { 
+            --text-dark: #1d2731;
+            --bg-light-blue: #ffefd3;
+            --bg-light-pink: #fdf0ec;
+            --bg-gray: #f8f9fa;
+        }
 
-    min-height: 100vh;
-    background-image: url('../img/marcacao.jpeg');
-    /* Imagem de fundo realista de massagem */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
 
-/* Escurecimento do fundo para dar contraste */
-.hero-section2 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.25);
-    z-index: 1;
-}
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
 
-.appointment-container {
-    position: relative;
-    z-index: 2;
-    background-color: rgba(33, 30, 28, 0.75);
-    /* Fundo translúcido escuro */
-    padding: 50px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+        .btn-custom-dark {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 30px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s ease;
+        }
 
-.appointment-container h2 {
-    color: #ffffff;
-    font-size: 36px;
-    margin-bottom: 35px;
-    font-weight: 600;
-}
+        .btn-custom-dark:hover {
+            background-color: #07253a;
+            color: white;
+            opacity: 0.9;
+        }
 
-.appointment-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+        .btn-outline-custom {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 14px 18px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: #ffffff;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s;
-}
+        .btn-outline-custom.active, .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
 
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
+        /* Seções Customizadas */
+        .bg-light-blue { background-color: var(--bg-light-blue); }
+        .bg-light-pink { background-color: var(--bg-light-pink); }
+        .bg-gray { background-color: var(--bg-gray); }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #d79d39;
-}
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
 
-/* Customização do Select */
-.form-group select option {
-    background-color: #211e1c;
-    color: #fff;
-}
+        .rounded-custom {
+            border-radius: 24px;
+        }
 
-select.form-controlxx {
-    appearance: none;
-    cursor: pointer;
- background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgZmlsbD0id2hpdGUiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTcuMjQ3IDExLjE0IDIuNDUxIDUuNjU4QzEuODg1IDUuMDEzIDIuMzQ1IDQgMy4yMDQgNGg5LjU5MmExIDEgMCAwIDEgLjc1MyAxLjY1OWwtNC43OTYgNS40ODFhMSAxIDAgMCAxLTEuNTA2IDB6Ii8+PC9zdmc+");background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 15px) center;
-    padding-right: 40px;
-}
-
-/* Botão de Envio */
-.btn-submit {
-    width: 100%;
-    padding: 14px;
-    background-color: #d79d39;
-    /* Tom salmão/coral do layout */
-    border: none;
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: #9e6d18;
-}
-
-
-/* --- SEÇÃO 2: HORÁRIO DE FUNCIONAMENTO --- */
-.info-section {
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
-    background-color: #ffffff;
-}
-
-.info-container {
-    display: flex;
-    position: relative;
-    width: 100%;
-    align-items: center;
-}
-
-.image-block {
-    width: 55%;
-    height: 550px;
-}
-
-.image-block img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Card Rosa sobreposto */
-.content-card {
-    position: absolute;
-    right: 0;
-    width: 55%;
-    background-color: #ffe4b6;
-    /* Fundo rosa bem claro */
-    padding: 50px 60px;
-    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.badge {
-    background-color: #d79d39;
-    color: white;
-    padding: 4px 10px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.content-card h2 {
-    color: #232323;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.description {
-    color: #666666;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* Lista de Horários */
-.hours-list {
-    list-style: none;
-    margin-bottom: 35px;
-}
-
-.hours-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #232323;
-}
-
-.circle-icon {
-    width: 8px;
-    height: 8px;
-    border: 2px solid #d79d39;
-    border-radius: 50%;
-    margin-right: 15px;
-    display: inline-block;
-}
-
-.hours-list .day {
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-.hours-list .time {
-    font-weight: 400;
-}
-
-/* Botão Book Now */
-.btn-book {
-    display: inline-block;
-    background-color: #d79d39;
-    color: white;
-    padding: 12px 28px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background-color 0.3s;
-}
-
-.btn-book:hover {
-    background-color: #9b6810;
-}
-
-
-/* --- RESPONSIVIDADE (MOBILE-FRIENDLY) --- */
-@media (max-width: 768px) {
-
-    /* Ajustes Seção 1 */
-    .appointment-form {
-        grid-template-columns: 1fr;
-    }
-
-    .appointment-container {
-        padding: 30px 20px;
-        margin: 15px;
-    }
-
-    /* Ajustes Seção 2 */
-    .info-container {
-        flex-direction: column;
-    }
-
-    .image-block {
-        width: 100%;
-        height: 350px;
-    }
-
-    .content-card {
-        position: relative;
-        width: 100%;
-        margin-top: -50px;
-        /* Mantém um charme de sobreposição no mobile */
-        padding: 40px 25px;
-    }
-}
+        /* Estilização Customizada do Accordion do Vue */
+        .accordion-item-custom {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+        .accordion-header-custom {
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-color);
+        }
+        .accordion-body-custom {
+            padding-top: 10px;
+            color: #555;
+            font-size: 0.95rem;
+        }

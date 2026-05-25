@@ -1,0 +1,178 @@
+
+<div>
+
+    <section class="container-fluid p-0 bg-light-blue">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5 p-lg-5 text-center text-md-start">
+                <span class="text-uppercase tracking-wider small text-muted">Masagem</span>
+                <h1 class="display-4 my-3 fw-bold">Renove o Corpo, <br>Revitalize a Mente</h1>
+                <p class="lead text-muted mb-4 fs-6" style="max-width: 450px;">
+                    Desfrute de momentos de relaxamento e renovação com os nossos serviços de massagem, desenvolvidos para aliviar tensões, reduzir o stress e promover o equilíbrio entre corpo e mente.
+                </p> 
+                <a class="btn btn-primary text-uppercase px-5 py-2" href="#/">Reserve agora</a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=1000" alt="Hot Stone Therapy" class="img-cover" style="max-height: 600px;">
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 mb-4 mb-md-0">
+                <img src="./assets/img/servicos/massage1.png" alt="Massage Details" class="img-fluid rounded-custom img-cover" style="max-height: 800px;">
+            </div>
+            <div class="col-md-7 ps-md-5">
+                <span class="text-uppercase small text-muted fw-bold">O QUE FAZEMOS</span>
+                
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Massagem Relaxante</h4>
+                    <p class="text-muted small">Ideal para aliviar o stress e as tensões do dia a dia. Promove uma profunda sensação de relaxamento, melhora a circulação sanguínea e proporciona bem-estar físico e mental.</p>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Massagem Terapêutica</h4>
+                    <p class="text-muted small">Indicada para aliviar dores musculares, tensões localizadas e desconfortos físicos. Auxilia na recuperação muscular, melhora a mobilidade e contribui para a saúde do corpo.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Massagem Terapêutica</h4>
+                    <p class="text-muted small">Especialmente desenvolvida para atletas e pessoas fisicamente ativas. Ajuda na preparação muscular antes das atividades físicas e acelera a recuperação após o exercício, reduzindo fadiga e lesões.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Massagem com Pedras Quentes</h4>
+                    <p class="text-muted small">Realizada com pedras aquecidas que promovem relaxamento profundo dos músculos. Ajuda a aliviar tensões, reduzir o stress, melhorar a circulação e proporcionar uma sensação intensa de conforto.</p>
+                </div>
+
+                    <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Reflexologia</h4>
+                    <p class="text-muted small">Técnica baseada na estimulação de pontos específicos dos pés que correspondem a diferentes órgãos e sistemas do corpo. Favorece o equilíbrio do organismo, reduz o stress e promove o bem-estar geral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-4">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 pe-md-5">
+                <span class="text-uppercase small text-muted fw-bold">Deep Relief</span>
+                <h2 class="my-3 fw-bold">Release from the inside out</h2>
+                <p class="text-muted mb-4">
+                    Nossa terapia com pedras quentes penetra as camadas musculares mais profundas para derreter o estresse diário. Sinta a combinação perfeita de calor e técnicas de deslizamento tradicionais.
+                </p>
+                <button class="btn btn-custom-dark btn-sm">Learn More</button>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=800" alt="Relaxed Man" class="img-fluid rounded-custom img-cover" style="max-height: 350px;">
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid p-0 bg-light-blue my-5">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800" alt="Therapy Benefits" class="img-cover">
+            </div>
+            <div class="col-md-6 p-5">
+                <span class="text-uppercase small text-muted fw-bold">How it helps you</span>
+                <h2 class="my-3 fw-bold">Where can a Hot Stone Massage help?</h2>
+                
+                <div class="my-4">
+                    <button 
+                        v-for="tab in benefitTabs" 
+                        :key="tab.id"
+                        @click="activeBenefitTab = tab.id"
+                        :class="['btn btn-outline-custom', { active: activeBenefitTab === tab.id }]"
+                    >
+                        {{ tab.title }}
+                    </button>
+                </div>
+
+                <div class="tab-content mt-3">
+                    <p class="text-muted animate-fade-in">
+                        {{ currentBenefitText }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid p-0 bg-light-pink">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5">
+                <span class="text-uppercase small text-muted fw-bold">Customization</span>
+                <h2 class="my-3 fw-bold">Your massage, made personal</h2>
+                
+                <div class="my-4">
+                    <button 
+                        v-for="tab in personalTabs" 
+                        :key="tab.id"
+                        @click="activePersonalTab = tab.id"
+                        :class="['btn btn-outline-custom', { active: activePersonalTab === tab.id }]"
+                    >
+                        {{ tab.title }}
+                    </button>
+                </div>
+
+                <div class="tab-content mt-3">
+                    <p class="text-muted">
+                        {{ currentPersonalText }}
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800" alt="Personalized Treatment" class="img-cover">
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <h2 class="text-center mb-5 fw-bold">From arrival to after care</h2>
+        <div class="row align-items-center">
+            <div class="col-md-5 pe-md-5">
+                
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(1)">
+                        <span>Before your treatment</span>
+                        <span>{{ accordionOpen === 1 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 1" class="accordion-body-custom">
+                        Recomendamos chegar 15 minutos antes para preencher sua ficha de anamnese. Evite refeições pesadas logo antes da sessão e mantenha-se hidratado.
+                    </div>
+                </div>
+
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(2)">
+                        <span>During your treatment</span>
+                        <span>{{ accordionOpen === 2 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 2" class="accordion-body-custom">
+                        Seu terapeuta aplicará óleo ou loção e usará as pedras aquecidas como extensões das próprias mãos, além de posicioná-las em pontos estratégicos do corpo.
+                    </div>
+                </div>
+
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(3)">
+                        <span>After your treatment</span>
+                        <span>{{ accordionOpen === 3 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 3" class="accordion-body-custom">
+                        Beba bastante água para ajudar a eliminar as toxinas liberadas. Evite exercícios físicos intensos nas próximas horas para prolongar o relaxamento muscular.
+                    </div>
+                </div>
+
+                <div class="text-center text-md-start mt-4">
+                    <button class="btn btn-custom-dark">Find a Spa</button>
+                </div>
+
+            </div>
+            <div class="col-md-7 mt-4 mt-md-0">
+                <div class="position-relative text-center">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=800" alt="Spa Ambience" class="img-fluid rounded-custom w-100 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

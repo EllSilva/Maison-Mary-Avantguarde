@@ -12,8 +12,8 @@ Vue.component('p-footer', page_footer)
 import page_home from './view/home/home.js'
 Vue.component('p-home', page_home)
 
-import page_servicos from './view/servicos/home.js'
-Vue.component('p-servicos', page_servicos)
+import page_masagem from './view/servicos/masagem.js'
+Vue.component('p-masagem', page_masagem)
 
 import page_sobre from './view/sobre/home.js'
 Vue.component('p-sobre', page_sobre)
@@ -30,7 +30,7 @@ Vue.use(Router)
 
 const routes = [
     { path: '/', component: { template: '<p-home></p-home>' } },
-    { path: '/servicos', component: { template: '<p-servicos></p-servicos>' } },
+    { path: '/masagem', component: { template: '<p-masagem></p-masagem>' } },
     { path: '/sobre', component: { template: '<p-sobre></p-sobre>' } },
     { path: '/galeria', component: { template: '<p-galeria></p-galeria>' } },
 

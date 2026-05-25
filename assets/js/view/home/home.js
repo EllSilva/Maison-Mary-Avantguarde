@@ -100,8 +100,8 @@ export default {
 
         enviarWhatsApp() {
 
-            const numero = '244923456789'; // Seu número
-
+            const numero = '244973087336'; // Seu número
+ 
             const texto =
                 `*📅 NOVO AGENDAMENTO*
 
@@ -112,10 +112,7 @@ export default {
 💆 Serviço: ${this.servico}
 
 📅 Data: ${this.dataConsulta}
-🕒 Hora: ${this.horaConsulta}
-
-💬 Mensagem:
-${this.mensagem}`;
+🕒 Hora: ${this.horaConsulta}`;
 
             const url =
                 `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
