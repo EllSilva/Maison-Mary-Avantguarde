@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Atelier - Haute Vernis</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-navy: #1C1B1A; /* Grafite/Preto luxo para contraste */
+            --secondary-blue: #D4A396; /* Tom Quartzo Rosa / Nude sofisticado */
+            --text-dark: #2D2A29;
+            --bg-light: #FAF5F3; /* Fundo rosado sutil e clean */
+            --accent-soft: #EDE2DE;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.35)), 
+                        url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1920') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 400;
+        }
+
+        .hero-title em {
+            font-style: italic;
+        }
+
+        /* Custom Buttons */
+        .btn-custom-white {
+            background-color: #ffffff;
+            color: var(--primary-navy);
+            border: 1px solid #ffffff;
+            padding: 10px 28px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom-white:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .btn-custom-outline {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px 28px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom-outline:hover {
+            background-color: #ffffff;
+            color: var(--primary-navy);
+        }
+
+        .btn-navy {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid var(--primary-navy);
+            transition: all 0.3s;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            color: #ffffff;
+        }
+
+        .btn-outline-navy {
+            background-color: transparent;
+            border: 1px solid var(--primary-navy);
+            color: var(--primary-navy);
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Botões de Alternância (Abas) */
+        .btn-toggle {
+            background-color: transparent;
+            border: 1px solid var(--primary-navy);
+            color: var(--primary-navy);
+            padding: 10px 35px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 8px;
+        }
+
+        .btn-toggle.active, .btn-toggle:hover {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light-section {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            color: var(--primary-navy);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle-mini {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #B57C70;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Split Promo Section */
+        .split-image {
+            background: url('https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1000') no-repeat center center;
+            background-size: cover;
+            min-height: 450px;
+        }
+
+        .split-text-box {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        /* Treatment Cards/Rows */
+        .treatment-img {
+            border-radius: 16px;
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .badge-feature {
+            background-color: #F5EAE6;
+            color: #9C6256;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <header class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <span class="text-uppercase small tracking-wide d-block mb-2 text-white-50">Haute Vernis & Nail Lounge</span>
+                        <h1 class="hero-title mb-4">Sofisticação <em>até à ponta dos dedos</em></h1>
+                        <p class="lead mb-5 text-white-50" style="max-width: 500px;">
+                            Experimente o conceito de alta costura para as suas unhas. Rituais de spa, alongamentos avançados e nail art minimalista com biossegurança rigorosa.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#" class="btn btn-custom-white mr-3 mb-2">Agendar Serviço</a>
+                            <a href="#" class="btn btn-custom-outline mb-2">Comprar Gift Card</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-padding bg-light-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="https://images.unsplash.com/photo-1632345031435-8797b2d58045?q=80&w=800" alt="Nail Care Masculino e Feminino" class="img-fluid" style="border-radius: 16px;">
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                        <span class="subtitle-mini">Cuidado e Estética</span>
+                        <h2 class="section-title">Unhas Impecáveis, Saúde Preservada.</h2>
+                        <p class="text-muted mb-5">Combinamos técnicas de cuticulagem premium, esmaltação de longa duração e rituais relaxantes para mãos e pés impecáveis.</p>
+                        
+                        <div class="mb-4" v-for="(item, index) in diferenciais" :key="index">
+                            <h5 class="font-weight-bold text-dark mb-2">{{ item.titulo }}</h5>
+                            <p class="text-muted small">{{ item.descricao }}</p>
+                        </div>
+
+                        <a href="#" class="btn btn-navy mt-3">Agendar uma Avaliação</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light-section" style="border-top: 1px solid var(--accent-soft);">
+            <div class="container">
+                
+                <div class="text-center mb-5">
+                    <span class="subtitle-mini">Nossas Assinaturas</span>
+                    <h2 class="section-title">Serviços Especializados</h2>
+                    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">Escolha a categoria ideal para renovar as suas mãos e pés com as nossas nail designers.</p>
+                    
+                    <div class="d-flex justify-content-center mt-4">
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'manicure' }"
+                            @click="categoriaAtiva = 'manicure'">
+                            Manicure & Extensões
+                        </button>
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'pedicure' }"
+                            @click="categoriaAtiva = 'pedicure'">
+                            Pedicure & Cuidados Avançados
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-5 pt-2">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="conteudoCategoria.imagem" :alt="conteudoCategoria.titulo" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.5rem; color: var(--primary-navy);">
+                            {{ conteudoCategoria.titulo }}
+                        </h3>
+                        
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in conteudoCategoria.tags">✓ {{ tag }}</span>
+                        </div>
+
+                        <p class="text-muted mb-4" style="line-height: 1.7;">
+                            {{ conteudoCategoria.descricao }}
+                        </p>
+                        
+                        <div>
+                            <a href="#" class="btn btn-navy">Ver Galeria de Designs</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-6 split-image"></div>
+                <div class="col-md-6 split-text-box">
+                    <span class="text-uppercase small text-white-50 tracking-wide mb-2">Clube de Fidelidade</span>
+                    <h2 class="font-serif mb-4">Sua rotina de autocuidado</h2>
+                    <p class="text-white-50 mb-5" style="max-width: 450px;">
+                        Ao realizar a sua primeira assinatura de Manicure + Pedicure SPA, ganhe uma hidratação profunda com parafina quente para as mãos.
+                    </p>
+                    <div>
+                        <a href="#" class="btn btn-custom-outline">Garantir Benefício</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                
+                <div class="text-center mb-5">
+                    <span class="subtitle-mini">Menu Wellness</span>
+                    <h2 class="section-title">Experiências de Bem-Estar para os Pés e Mãos</h2>
+                </div>
+
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="tratamentos[0].imagem" :alt="tratamentos[0].nome" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[0].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[0].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
+                            <a href="#" class="btn btn-navy">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5" style="border-color: var(--accent-soft);">
+
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                        <img :src="tratamentos[1].imagem" :alt="tratamentos[1].nome" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 order-md-1 pr-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[1].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
+                            <a href="#" class="btn btn-navy">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                categoriaAtiva: 'manicure', 
+                diferenciais: [
+                    {
+                        titulo: "Biossegurança e Esterilização",
+                        descricao: "Utilizamos instrumentos 100% esterilizados em autoclave de nível hospitalar e materiais descartáveis para total segurança da sua saúde."
+                    },
+                    {
+                        titulo: "Alongamentos Duradouros",
+                        descricao: "Técnicas modernas em Gel moldado, Fibra de Vidro e Acrigel que conferem aspecto natural, resistência extrema e proteção à unha biológica."
+                    },
+                    {
+                        titulo: "Esmaltação Premium & em Gel",
+                        descricao: "Trabalhamos com marcas importadas que oferecem brilho espelhado duradouro e secagem imediata em cabines LED, sem lascar por semanas."
+                    }
+                ],
+                solucoes: {
+                    manicure: {
+                        titulo: "Manicure & Extensões de Luxo",
+                        tags: ["Gel Moldado", "Blindagem Diamante", "Nail Art Minimalista"],
+                        descricao: "Desde a clássica manicure russa com cuticulagem perfeita até as extensões de fibra de vidro ultrafinas. Desenhamos o formato ideal (Almond, Stiletto, Quadrada) que alonga visualmente as suas mãos com acabamento natural.",
+                        imagem: "https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800"
+                    },
+                    pedicure: {
+                        titulo: "Pedicure & Cuidados Avançados",
+                        tags: ["Plástica dos Pés", "Remoção de Calosidades", "Esfoliação Orgânica"],
+                        descricao: "Muito além da estética. Um tratamento focado no alívio de tensões, eliminação de fissuras, calosidades e pele ressecada. Finalizado com hidratação profunda e esmaltação impecável de alta durabilidade.",
+                        imagem: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=800"
+                    }
+                },
+                tratamentos: [
+                    {
+                        nome: "Spa dos Pés Imperial",
+                        tags: ["Banho de Sais", "Massagem Relaxante", "Geleia de Nutrição"],
+                        descricao: "Uma imersão relaxante em água aquecida com sais minerais e óleos essenciais, seguida por uma esfoliação revigorante e uma massagem profunda que ativa a circulação e alivia o cansaço dos pés.",
+                        imagem: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800"
+                    },
+                    {
+                        nome: "Blindagem e Reconstrução de Quartzo",
+                        tags: ["Fortalecimento", "Capa Gel Protetora", "Anti-Quebra"],
+                        descricao: "O tratamento ideal para unhas fracas, quebradiças ou descamadas. Uma camada de gel de alta tecnologia protege a unha natural contra impactos, permitindo que ela cresça saudável e forte sem quebrar.",
+                        imagem: "https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=800"
+                    }
+                ]
+            },
+            computed: {
+                conteudoCategoria() {
+                    return this.solucoes[this.categoriaAtiva];
+                }
+            }
+        });
+    </script>
+</body>
+</html>

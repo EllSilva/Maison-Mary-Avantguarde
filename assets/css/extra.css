@@ -1,85 +1,345 @@
-   :root { 
-            --text-dark: #1d2731;
-            --bg-light-blue: #ffefd3;
-            --bg-light-pink: #fdf0ec;
-            --bg-gray: #f8f9fa;
-        }
+   /* AREA DE MASSAGEM */
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+   :root {
+       --text-dark: #1d2731;
+       --bg-light-blue: #ffefd3;
+       --bg-light-pink: #fdf0ec;
+       --bg-gray: #f8f9fa;
+   }
 
-        h1, h2, h3, .font-serif {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
-        }
+   body {
+       font-family: 'Plus Jakarta Sans', sans-serif;
+       color: var(--text-dark);
+       overflow-x: hidden;
+   }
 
-        .btn-custom-dark {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 30px;
-            border-radius: 4px;
-            font-weight: 500;
-            border: none;
-            transition: all 0.3s ease;
-        }
+   h1,
+   h2,
+   h3,
+   .font-serif {
+       font-family: 'Playfair Display', serif;
+       color: var(--primary-color);
+   }
 
-        .btn-custom-dark:hover {
-            background-color: #07253a;
-            color: white;
-            opacity: 0.9;
-        }
+   .btn-custom-dark {
+       background-color: var(--primary-color);
+       color: white;
+       padding: 10px 30px;
+       border-radius: 4px;
+       font-weight: 500;
+       border: none;
+       transition: all 0.3s ease;
+   }
 
-        .btn-outline-custom {
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            background: transparent;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
+   .btn-custom-dark:hover {
+       background-color: #07253a;
+       color: white;
+       opacity: 0.9;
+   }
 
-        .btn-outline-custom.active, .btn-outline-custom:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
+   .btn-outline-custom {
+       border: 1px solid var(--primary-color);
+       color: var(--primary-color);
+       background: transparent;
+       padding: 6px 20px;
+       border-radius: 20px;
+       font-size: 0.9rem;
+       margin-right: 10px;
+       margin-bottom: 10px;
+       transition: all 0.2s ease;
+   }
 
-        /* Seções Customizadas */
-        .bg-light-blue { background-color: var(--bg-light-blue); }
-        .bg-light-pink { background-color: var(--bg-light-pink); }
-        .bg-gray { background-color: var(--bg-gray); }
+   .btn-outline-custom.active,
+   .btn-outline-custom:hover {
+       background-color: var(--primary-color);
+       color: white;
+   }
 
-        .img-cover {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 400px;
-        }
+   /* Seções Customizadas */
+   .bg-light-blue {
+       background-color: var(--bg-light-blue);
+   }
 
-        .rounded-custom {
-            border-radius: 24px;
-        }
+   .bg-light-pink {
+       background-color: var(--bg-light-pink);
+   }
 
-        /* Estilização Customizada do Accordion do Vue */
-        .accordion-item-custom {
-            border-bottom: 1px solid #ccc;
-            padding: 15px 0;
-        }
-        .accordion-header-custom {
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--primary-color);
-        }
-        .accordion-body-custom {
-            padding-top: 10px;
-            color: #555;
-            font-size: 0.95rem;
-        }
+   .bg-gray {
+       background-color: var(--bg-gray);
+   }
+
+   .img-cover {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       min-height: 400px;
+   }
+
+   .rounded-custom {
+       border-radius: 24px;
+   }
+
+   /* Estilização Customizada do Accordion do Vue */
+   .accordion-item-custom {
+       border-bottom: 1px solid #ccc;
+       padding: 15px 0;
+   }
+
+   .accordion-header-custom {
+       cursor: pointer;
+       font-weight: 600;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       color: var(--primary-color);
+   }
+
+   .accordion-body-custom {
+       padding-top: 10px;
+       color: #555;
+       font-size: 0.95rem;
+   }
+
+   /* FIM AREA DE MASSAGEM */
+
+   /* AREA DE ESTETICA */
+
+   :root {
+       --primary-navy: #2B2B2B;
+       --secondary-blue: #cc912c;
+       --text-dark: #2B2B2B;
+       --bg-light: #F7F9FB;
+       --accent-soft: #E2E8F0;
+   }
+
+
+
+   h1,
+   h2,
+   h3,
+   .font-serif {
+       font-family: 'Playfair Display', serif;
+   }
+
+   /* Hero Section */
+   .hero-section {
+       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
+           url('../img/servicos/estetica.jpg') no-repeat center center;
+       background-size: cover;
+       height: 80vh;
+       display: flex;
+       align-items: center;
+       color: #ffffff;
+   }
+
+   /* Hero Section */
+ .hero-section-cabelo {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Imagem + gradiente */
+.hero-section-cabelo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.85) 40%,
+            rgba(0, 0, 0, 0.1) 100%
+        ),
+        url('../img/servicos/cabelo2.jpeg') center center no-repeat;
+
+    background-size: cover;
+    animation: zoomHero 15s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* Conteúdo fica acima da imagem */
+.hero-section-cabelo > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero-section-cabelo {
+        min-height: 100dvh;
+    }
+}
+
+@keyframes zoomHero {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.15);
+    }
+}
+
+
+   .hero-title {
+       font-size: 3.5rem;
+       font-weight: 400;
+   }
+
+   .hero-title em {
+       font-style: italic;
+   }
+
+   /* Custom Buttons */
+   .btn-custom-white {
+       background-color: #ffffff;
+       color: var(--primary-navy);
+       border: 1px solid #ffffff;
+       padding: 10px 28px;
+       font-weight: 500;
+       border-radius: 4px;
+       transition: all 0.3s;
+   }
+
+   .btn-custom-white:hover {
+       background-color: transparent;
+       color: #ffffff;
+   }
+
+   .btn-custom-outline {
+       background-color: transparent;
+       color: #ffffff;
+       border: 1px solid #ffffff;
+       padding: 10px 28px;
+       font-weight: 500;
+       border-radius: 4px;
+       transition: all 0.3s;
+   }
+
+   .btn-custom-outline:hover {
+       background-color: #ffffff;
+       color: var(--primary-navy);
+   }
+
+   .btn-navy {
+       background-color: var(--primary-navy);
+       color: #ffffff;
+       padding: 10px 28px;
+       border-radius: 4px;
+       font-weight: 500;
+       border: 1px solid var(--primary-navy);
+       transition: all 0.3s;
+   }
+
+   .btn-navy:hover {
+       background-color: var(--secondary-blue);
+       border-color: var(--secondary-blue);
+       color: #ffffff;
+   }
+
+   .btn-outline-navy {
+       background-color: transparent;
+       border: 1px solid var(--primary-navy);
+       color: var(--primary-navy);
+       padding: 10px 28px;
+       border-radius: 4px;
+       font-weight: 500;
+   }
+
+   /* Botões de Alternância (Abas) */
+   .btn-toggle {
+       background-color: transparent;
+       border: 1px solid #ffd285;
+       ;
+       color: #cc912c;
+       ;
+       padding: 10px 35px;
+       border-radius: 30px;
+       font-weight: 500;
+       transition: all 0.3s ease;
+       margin: 0 8px;
+   }
+
+   .btn-toggle.active,
+   .btn-toggle:hover {
+       background-color: #cc912c;
+       ;
+       color: #ffffff;
+       outline: none;
+       box-shadow: none;
+   }
+
+   /* Sections */
+   .section-padding {
+       padding: 80px 0;
+   }
+
+   .bg-light-section {
+       background-color: var(--bg-light);
+   }
+
+   .section-title {
+       color: var(--primary-navy);
+       font-size: 2.5rem;
+       margin-bottom: 20px;
+   }
+
+   .subtitle-mini {
+       text-transform: uppercase;
+       font-size: 0.8rem;
+       letter-spacing: 2px;
+       font-weight: 600;
+       color: var(--secondary-blue);
+       display: block;
+       margin-bottom: 15px;
+   }
+
+   /* Split Promo Section */
+   .split-image {
+       background: url('../img/servicos/estetica7.jpg') no-repeat center center;
+       background-size: cover;
+       min-height: 450px;
+   }
+
+     .split-image2 {
+       background: url('../img/servicos/cabelo.jpeg') no-repeat center center;
+       background-size: cover;
+       min-height: 450px;
+   }
+
+   .split-text-box {
+       background-color: var(--primary-navy);
+       color: #ffffff;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       padding: 60px;
+   }
+
+   /* Treatment Cards/Rows */
+   .treatment-img {
+       border-radius: 16px;
+       width: 100%;
+       height: 380px;
+       object-fit: cover;
+   }
+
+   .badge-feature {
+       background-color: #fcefd8;
+       color: var(--secondary-blue);
+       padding: 6px 14px;
+       border-radius: 4px;
+       font-size: 0.85rem;
+       margin-right: 10px;
+       margin-bottom: 10px;
+       display: inline-block;
+       font-weight: 500;
+   }
+
+   /* FIM AREA DE ESTETICA */
+
+
+ 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preçário de Penteados</title>
+
+    <!-- Vue.js 2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#f8f8f8;
+        }
+
+        .precos-section{
+            padding:80px 20px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .precos-card{
+            max-width:900px;
+            width:100%;
+            background:#fff;
+            border-radius:20px;
+            padding:50px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,.08);
+        }
+
+        .precos-icon{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .precos-card h2{
+            margin:0 0 15px;
+            font-size:2rem;
+            color:#222;
+        }
+
+        .precos-card p{
+            color:#666;
+            line-height:1.7;
+            max-width:700px;
+            margin:0 auto 30px;
+        }
+
+        .btn-pdf{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:16px 35px;
+            background:#000;
+            color:#fff;
+            text-decoration:none;
+            border-radius:50px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn-pdf:hover{
+            transform:translateY(-3px);
+            background:#222;
+        }
+
+        @media(max-width:768px){
+
+            .precos-card{
+                padding:35px 25px;
+            }
+
+            .precos-card h2{
+                font-size:1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <section class="precos-section">
+
+        <div class="precos-card">
+
+            <div class="precos-icon">
+                💇‍♀️
+            </div>
+
+            <h2>Consulte os Preços dos Nossos Penteados</h2>
+
+            <p>
+                Conheça todos os nossos serviços de penteados, tranças,
+                extensões e tratamentos capilares. Faça o download do
+                nosso catálogo em PDF e encontre o estilo ideal para si.
+            </p>
+
+            <a
+                :href="pdfUrl"
+                download
+                class="btn-pdf"
+            >
+                📄 Baixar Tabela de Preços
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        pdfUrl: 'pdf/precos-penteados.pdf'
+    }
+});
+</script>
+
+</body>
+</html>

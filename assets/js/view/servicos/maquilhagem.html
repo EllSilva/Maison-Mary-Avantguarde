@@ -1,0 +1,183 @@
+<div>
+ 
+    <section class="container-fluid p-0 bg-light-blue">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 p-5 p-lg-5 text-center text-md-start">
+                <h2 class="  font-dancing-script text-primary">A Beleza em Sua Melhor Versão</h2>
+                <h1 class="display-4 my-3 fw-bold">A Arte de Realçar a Sua Beleza</h1>
+                <p class="lead text-muted mb-4 fs-6" style="max-width: 450px;">
+                    Transforme a sua imagem com uma maquilhagem elegante e sofisticada. Valorizamos os seus traços naturais através de técnicas avançadas de visagismo, pele impecável e acabamentos de luxo, criando um visual exclusivo para cada ocasião.
+                </p>
+                <a class="btn btn-primary text-uppercase px-5 py-2" href="#/">Reserve agora</a>
+            </div>
+            <div class="col-md-6">
+                <img src="./assets/img/servicos/maquilhagens.png" alt="Hot Stone Therapy" class="img-cover"
+                    style="max-height: 600px;">
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 mb-4 mb-md-0">
+                <img src="./assets/img/servicos/maquilhagem1.jpeg" alt="Massage Details"
+                    class="img-fluid rounded-custom img-cover" style="max-height: 800px;">
+            </div>
+            <div class="col-md-7 ps-md-5">
+                <h2 class="font-dancing-script text-primary">Conceito e Sofisticação</h2>
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">O Teu Rosto Ideal, Perfeitamente Iluminado.</h4>
+                    <p class="text-muted small">Unimos a simetria do visagismo a produtos de marcas globais premium para criar uma assinatura de beleza que é unicamente sua.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Maquilhagem com Visagismo</h4>
+                    <p class="text-muted small">Analisamos o formato do seu rosto, subtom de pele e a mensagem que deseja transmitir para criar traços harmoniosos e únicos.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Técnica de Pele Blindada</h4>
+                    <p class="text-muted small">Preparação com cosméticos de alta fixação e à prova de água para garantir que a sua maquilhagem permaneça intacta por longas horas..</p>
+                </div>
+
+                <div class="mt-4">
+                    <h4 class="fw-bold fs-5">Curadoria de Marcas Premium</h4>
+                    <p class="text-muted small">Trabalhamos exclusivamente com marcas consagradas (Chanel, Dior, MAC, Natasha Denona) para garantir acabamento leve e saúde para a pele..</p>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    
+        <section class=" section-padding bg-light-section" style="border-top: 1px solid var(--accent-soft);">
+            <div class="container my-5 ">
+                
+                <div class="text-center  ">
+                    <span class="subtitle-mini">Nossos Estilos</span>
+                    <h2 class="section-title">Assinaturas de Maquilhagem</h2>
+                    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">Selecione a vertente ideal para a sua ocasião e conheça a abordagem das nossas makeup artists.</p>
+                    
+                    <div class="d-flex justify-content-center mt-4">
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'social' }"
+                            @click="categoriaAtiva = 'social'">
+                            Maquilhagem Social & Gala
+                        </button>
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'noivas' }"
+                            @click="categoriaAtiva = 'noivas'">
+                            Noivas & Alta Definição
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-5 pt-2">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="conteudoCategoria.imagem" :alt="conteudoCategoria.titulo" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.5rem; color: var(--primary-navy);">
+                            {{ conteudoCategoria.titulo }}
+                        </h3>
+                        
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in conteudoCategoria.tags">✓ {{ tag }}</span>
+                        </div>
+
+                        <p class="text-muted mb-4" style="line-height: 1.7;">
+                            {{ conteudoCategoria.descricao }}
+                        </p>
+                        
+                        <div>
+                            <a href="#" class="btn btn-navy">Ver Lookbook</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    <section class="container my-5 py-4">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6 pe-md-5">
+                <h2 class="font-dancing-script text-primary">Design de Olhar & Cílios de Luxo</h2>
+                <h2 class="my-3 fw-bold">Olhar marcante, beleza sofisticada e conhecimento profissional.</h2>
+                <p class="text-muted mb-4">
+                Realce a sua beleza com técnicas exclusivas de design de sobrancelhas, cílios de luxo e maquilhagem premium. Criamos visuais sofisticados e harmoniosos que destacam os seus traços naturais, elevando a sua confiança e presença em qualquer ocasião
+                </p>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+            <div class="video-box mb-3">
+                    <video controls autoplay muted loop>
+                        <source src="./assets/img/servicos/maquilhagens.mp4" type="video/mp4">
+                        O seu navegador não suporta vídeo HTML5.
+                    </video>
+                </div>
+               </div>
+        </div>
+    </section>
+
+
+
+ 
+ 
+    <section class="container my-5 py-5">
+        <h2 class="text-center mb-5 fw-bold">Desde a chegada até os cuidados posteriores</h2>
+        <div class="row align-items-center">
+            <div class="col-md-5 pe-md-5">
+
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(1)">
+                        <span>Preciso de preparar a pele antes do atendimento</span>
+                        <span>{{ accordionOpen === 1 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 1" class="accordion-body-custom">
+                       Sim, recomendamos vir com a pele limpa, sem maquilhagem, para melhores resultados.
+                    </div>
+                </div>
+
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(2)">
+                        <span>Posso fazer o tratamento se tiver pele sensível?</span>
+                        <span>{{ accordionOpen === 2 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 2" class="accordion-body-custom">
+                        Sim, avaliamos cada caso e utilizamos técnicas adequadas para garantir conforto e segurança.
+                    </div>
+                </div>
+
+                <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(3)">
+                        <span>Existe alguma contraindicação?</span>
+                        <span>{{ accordionOpen === 3 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 3" class="accordion-body-custom">
+                        BEm alguns casos específicos pode haver restrições, por isso fazemos sempre uma breve avaliação antes do procedimento.
+                    </div>
+                </div>
+
+                       <div class="accordion-item-custom">
+                    <div class="accordion-header-custom" @click="toggleAccordion(3)">
+                        <span>O procedimento é doloroso?</span>
+                        <span>{{ accordionOpen === 4 ? '−' : '+' }}</span>
+                    </div>
+                    <div v-show="accordionOpen === 4" class="accordion-body-custom">
+                        BEm alguns casos específicos pode haver restrições, por isso fazemos sempre uma breve avaliação antes do procedimento.
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-7 mt-4 mt-md-0">
+                <div class="position-relative text-center">
+                    <img src="./assets/img/servicos/maquilhagem4.jpeg" alt="Spa Ambience"
+                        class="img-fluid rounded-custom w-100 shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

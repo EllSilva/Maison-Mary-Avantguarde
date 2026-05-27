@@ -1,0 +1,159 @@
+ <div>
+        <header class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                       
+                         <h2 class="  font-dancing-script text-primary">Estética Integrada</h2>
+                        <h1 class="hero-title mb-4">Radiância <em>que vai mais fundo</em></h1>
+                        <p class="lead mb-5 text-white-50" style="max-width: 500px;">
+                            Nutra o seu corpo e rosto com tratamentos personalizados, desenhados para uma renovação profunda e relaxamento absoluto.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2 mr-3 mb-2">Agendar Agora</a>
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="section-padding bg-light-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="./assets/img/servicos/estetica1.jpg" alt="Pele Saudável" class="img-fluid" style="border-radius: 16px;">
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                      
+                           <h2 class="  font-dancing-script text-primary">Por que nos escolher</h2>
+                        <h2 class=" ">Sua Melhor Pele, de Forma Simples.</h2>
+                        <p class="text-muted mb-5">Descubra tratamentos sob medida para a sua pele, sua rotina e seus objetivos de bem-estar.</p>
+                        
+                        <div class="mb-4" v-for="(item, index) in diferenciais" :key="index">
+                            <h5 class="font-weight-bold text-dark mb-2">{{ item.titulo }}</h5>
+                            <p class="text-muted small">{{ item.descricao }}</p>
+                        </div>
+
+                        <a href="#" class="btn btn-primary text-uppercase px-3 py-1">Agendar Consulta</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-light-section" style="border-top: 1px solid var(--accent-soft);">
+            <div class="container">
+                
+                <div class="text-center mb-5"> 
+     <h2 class="  font-dancing-script text-primary">Nossos Procedimentos</h2>
+                    
+                    <h2 class="section-title">Soluções Especializadas</h2>
+                    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">Selecione a categoria para conhecer nossos tratamentos mais procurados.</p>
+                    
+                    <div class="d-flex justify-content-center mt-4">
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'facial' }"
+                            @click="categoriaAtiva = 'facial'">
+                            Estética Facial
+                        </button>
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'corporal' }"
+                            @click="categoriaAtiva = 'corporal'">
+                            Estética Corporal
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row align-items-center mt-5 pt-2">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="conteudoCategoria.imagem" :alt="conteudoCategoria.titulo" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.5rem; color: var(--primary-navy);">
+                            {{ conteudoCategoria.titulo }}
+                        </h3>
+                        
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in conteudoCategoria.tags">✓ {{ tag }}</span>
+                        </div>
+
+                        <p class="text-muted mb-4" style="line-height: 1.7;">
+                            {{ conteudoCategoria.descricao }}
+                        </p>
+                        
+                        <div>
+                            <a href="#" class="btn btn-primary text-uppercase px-3 py-1">Fazer Marcação</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-6 split-image"></div>
+                <div class="col-md-6 split-text-box">
+                    <span class="text-uppercase small text-white-50 tracking-wide mb-2">Ofertas de Introdução</span>
+                    <h2 class="font-serif mb-4" style="font-size: 2.8rem;">Comece algo especial</h2>
+                    <p class="text-white-50 mb-5" style="max-width: 450px;">
+                        Aproveite valores exclusivos em nossos tratamentos faciais e corporais mais desejados — exclusivo para novos clientes.
+                    </p>
+                    <div>
+                       
+                        
+     <a href="" class="  font-dancing-script text-primary">Ver Plano</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                
+                <div class="text-center mb-5">
+                    <span class="subtitle-mini">Tratamentos Completos</span>
+                    <h2 class="section-title">A saúde da sua pele começa aqui</h2>
+                </div>
+
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="tratamentos[0].imagem" :alt="tratamentos[0].nome" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[0].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[0].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn-outline-navy mr-3 btn btn-primary text-uppercase px-5 py-2">Saber Mais</a>
+                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5" style="border-color: var(--accent-soft);">
+
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                        <img :src="tratamentos[1].imagem" :alt="tratamentos[1].nome" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 order-md-1 pr-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[1].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2 btn-outline-navy mr-3">Saber Mais</a>
+                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>

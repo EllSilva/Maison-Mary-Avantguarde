@@ -15,6 +15,20 @@ Vue.component('p-home', page_home)
 import page_masagem from './view/servicos/masagem.js'
 Vue.component('p-masagem', page_masagem)
 
+import page_estetica from './view/servicos/estetica.js'
+Vue.component('p-estetica', page_estetica)
+
+import page_cabelo from './view/servicos/cabelo.js'
+Vue.component('p-cabelo', page_cabelo)
+
+import page_maquilhagem from './view/servicos/maquilhagem.js'
+Vue.component('p-maquilhagem', page_maquilhagem)
+
+import page_unhas from './view/servicos/unhas.js'
+Vue.component('p-unhas', page_unhas)
+
+
+
 import page_sobre from './view/sobre/home.js'
 Vue.component('p-sobre', page_sobre)
 
@@ -31,6 +45,10 @@ Vue.use(Router)
 const routes = [
     { path: '/', component: { template: '<p-home></p-home>' } },
     { path: '/masagem', component: { template: '<p-masagem></p-masagem>' } },
+    { path: '/cabelo', component: { template: '<p-cabelo></p-cabelo>' } },
+     { path: '/unhas', component: { template: '<p-unhas></p-unhas>' } },
+       { path: '/maquilhagem', component: { template: '<p-maquilhagem></p-maquilhagem>' } },
+    { path: '/estetica', component: { template: '<p-estetica></p-estetica>' } },
     { path: '/sobre', component: { template: '<p-sobre></p-sobre>' } },
     { path: '/galeria', component: { template: '<p-galeria></p-galeria>' } },
 

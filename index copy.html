@@ -3,320 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Stone Massage - Hand & Stone</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/mixins/_utilities.scss" rel="stylesheet" defer>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Salon & Barber - Urban Concept</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #0b3c5d;
-            --text-dark: #1d2731;
-            --bg-light-blue: #eef4f8;
-            --bg-light-pink: #fdf0ec;
-            --bg-gray: #f8f9fa;
+            --primary-navy: #191919; /* Preto premium */
+            --secondary-blue: #8C7864; /* Tom bronze/âmbar clássico de barbearias e salões conceituais */
+            --text-dark: #2C2C2C;
+            --bg-light: #F9F9F9;
+            --accent-soft: #EBEBEB;
         }
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: var(--text-dark);
+            background-color: #ffffff;
             overflow-x: hidden;
         }
 
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
-            color: var(--primary-color);
         }
 
-        .btn-custom-dark {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 30px;
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1920') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 400;
+        }
+
+        .hero-title em {
+            font-style: italic;
+        }
+
+        /* Custom Buttons */
+        .btn-custom-white {
+            background-color: #ffffff;
+            color: var(--primary-navy);
+            border: 1px solid #ffffff;
+            padding: 10px 28px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom-white:hover {
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .btn-custom-outline {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px 28px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom-outline:hover {
+            background-color: #ffffff;
+            color: var(--primary-navy);
+        }
+
+        .btn-navy {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            padding: 10px 28px;
             border-radius: 4px;
             font-weight: 500;
-            border: none;
+            border: 1px solid var(--primary-navy);
+            transition: all 0.3s;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            color: #ffffff;
+        }
+
+        .btn-outline-navy {
+            background-color: transparent;
+            border: 1px solid var(--primary-navy);
+            color: var(--primary-navy);
+            padding: 10px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Botões de Alternância (Abas) */
+        .btn-toggle {
+            background-color: transparent;
+            border: 1px solid var(--primary-navy);
+            color: var(--primary-navy);
+            padding: 10px 35px;
+            border-radius: 30px;
+            font-weight: 500;
             transition: all 0.3s ease;
+            margin: 0 8px;
         }
 
-        .btn-custom-dark:hover {
-            background-color: #07253a;
-            color: white;
-            opacity: 0.9;
+        .btn-toggle.active, .btn-toggle:hover {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            outline: none;
+            box-shadow: none;
         }
 
-        .btn-outline-custom {
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            background: transparent;
-            padding: 6px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        /* Sections */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light-section {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            color: var(--primary-navy);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .subtitle-mini {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--secondary-blue);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* Split Promo Section */
+        .split-image {
+            background: url('https://images.unsplash.com/photo-1517832606589-7a598b647192?q=80&w=1000') no-repeat center center;
+            background-size: cover;
+            min-height: 450px;
+        }
+
+        .split-text-box {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        /* Treatment Cards/Rows */
+        .treatment-img {
+            border-radius: 16px;
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        .badge-feature {
+            background-color: #EFECE9;
+            color: var(--secondary-blue);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.85rem;
             margin-right: 10px;
             margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline-custom.active, .btn-outline-custom:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* Seções Customizadas */
-        .bg-light-blue { background-color: var(--bg-light-blue); }
-        .bg-light-pink { background-color: var(--bg-light-pink); }
-        .bg-gray { background-color: var(--bg-gray); }
-
-        .img-cover {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 400px;
-        }
-
-        .rounded-custom {
-            border-radius: 24px;
-        }
-
-        /* Estilização Customizada do Accordion do Vue */
-        .accordion-item-custom {
-            border-bottom: 1px solid #ccc;
-            padding: 15px 0;
-        }
-        .accordion-header-custom {
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--primary-color);
-        }
-        .accordion-body-custom {
-            padding-top: 10px;
-            color: #555;
-            font-size: 0.95rem;
+            display: inline-block;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
-<div id="app">
+    <div id="app">
+        <header class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <span class="text-uppercase small tracking-wide d-block mb-2 text-white-50">Estilo & Visagismo Unissex</span>
+                        <h1 class="hero-title mb-4">Estilo <em>que define sua presença</em></h1>
+                        <p class="lead mb-5 text-white-50" style="max-width: 500px;">
+                            Um espaço integrado de beleza e barbearia clássica. Viva uma experiência premium de cuidado com profissionais especialistas em tendências e visagismo.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#" class="btn btn-custom-white mr-3 mb-2">Reservar Cadeira / Horário</a>
+                            <a href="#" class="btn btn-custom-outline mb-2">Nossos Serviços</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <section class="container-fluid p-0 bg-light-blue">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-            <div class="col-md-6 p-5 p-lg-5 text-center text-md-start">
-                <span class="text-uppercase tracking-wider small text-muted">Massage</span>
-                <h1 class="display-4 my-3 fw-bold">Hot Stone<br>Massage</h1>
-                <p class="lead text-muted mb-4 fs-6" style="max-width: 450px;">
-                    Melhore sua experiência de massagem de 50 ou 80 minutos incorporando pedras de rio aquecidas e polidas para aliviar a tensão muscular profunda.
-                </p>
-                <button class="btn btn-custom-dark">Book Now</button>
-            </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=1000" alt="Hot Stone Therapy" class="img-cover" style="max-height: 600px;">
-            </div>
-        </div>
-    </section>
+        <section class="section-padding bg-light-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800" alt="Experiência de Cuidado" class="img-fluid" style="border-radius: 16px;">
+                    </div>
+                    <div class="col-md-5 offset-md-1">
+                        <span class="subtitle-mini">O Espaço Ideal</span>
+                        <h2 class="section-title">Muito mais que um corte. Uma experiência.</h2>
+                        <p class="text-muted mb-5">Combinamos poltronas clássicas, navalha afiada, as últimas tendências em mechas e rituais de bem-estar num ambiente contemporâneo.</p>
+                        
+                        <div class="mb-4" v-for="(item, index) in diferenciais" :key="index">
+                            <h5 class="font-weight-bold text-dark mb-2">{{ item.titulo }}</h5>
+                            <p class="text-muted small">{{ item.descricao }}</p>
+                        </div>
 
-    <section class="container my-5 py-5">
-        <div class="row align-items-center">
-            <div class="col-md-5 mb-4 mb-md-0">
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800" alt="Massage Details" class="img-fluid rounded-custom img-cover" style="max-height: 500px;">
+                        <a href="#" class="btn btn-navy mt-3">Agendar Agora</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-7 ps-md-5">
-                <span class="text-uppercase small text-muted fw-bold">What it is to hold</span>
+        </section>
+
+        <section class="section-padding bg-light-section" style="border-top: 1px solid var(--accent-soft);">
+            <div class="container">
                 
-                <div class="mt-4">
-                    <h4 class="fw-bold fs-5">Stone warming</h4>
-                    <p class="text-muted small">As pedras são aquecidas à temperatura ideal para relaxar os músculos sem causar desconforto, permitindo uma terapia profunda.</p>
-                </div>
-                
-                <div class="mt-4">
-                    <h4 class="fw-bold fs-5">Deep relaxation and relief</h4>
-                    <p class="text-muted small">O calor penetra profundamente nos tecidos musculares, permitindo que o massoterapeuta libere pontos de tensão severos com maior facilidade.</p>
+                <div class="text-center mb-5">
+                    <span class="subtitle-mini">Nossas Vertentes</span>
+                    <h2 class="section-title">Soluções Especializadas</h2>
+                    <p class="text-muted mx-auto mb-4" style="max-width: 600px;">Selecione o espaço desejado para conhecer nossos serviços mais requisitados.</p>
+                    
+                    <div class="d-flex justify-content-center mt-4">
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'salao' }"
+                            @click="categoriaAtiva = 'salao'">
+                            Salão Feminino
+                        </button>
+                        <button 
+                            class="btn btn-toggle" 
+                            :class="{ active: categoriaAtiva === 'barbearia' }"
+                            @click="categoriaAtiva = 'barbearia'">
+                            Barbearia Clássica
+                        </button>
+                    </div>
                 </div>
 
-                <div class="mt-4">
-                    <h4 class="fw-bold fs-5">Grounding, calming renewal</h4>
-                    <p class="text-muted small">A massagem promove uma forte sensação de presença e equilíbrio, reduzindo significativamente os níveis de estresse e ansiedade mental.</p>
+                <div class="row align-items-center mt-5 pt-2">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="conteudoCategoria.imagem" :alt="conteudoCategoria.titulo" class="treatment-img shadow-sm">
+                    </div>
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.5rem; color: var(--primary-navy);">
+                            {{ conteudoCategoria.titulo }}
+                        </h3>
+                        
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in conteudoCategoria.tags">✓ {{ tag }}</span>
+                        </div>
+
+                        <p class="text-muted mb-4" style="line-height: 1.7;">
+                            {{ conteudoCategoria.descricao }}
+                        </p>
+                        
+                        <div>
+                            <a href="#" class="btn btn-navy">Ver Menu de Serviços</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mt-4">
-                    <h4 class="fw-bold fs-5">Healing comfort</h4>
-                    <p class="text-muted small">O calor contínuo atua como um abraço terapêutico que estimula a circulação sanguínea acelerando os processos naturais de cura do corpo.</p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container my-5 py-4">
-        <div class="row align-items-center flex-column-reverse flex-md-row">
-            <div class="col-md-6 pe-md-5">
-                <span class="text-uppercase small text-muted fw-bold">Deep Relief</span>
-                <h2 class="my-3 fw-bold">Release from the inside out</h2>
-                <p class="text-muted mb-4">
-                    Nossa terapia com pedras quentes penetra as camadas musculares mais profundas para derreter o estresse diário. Sinta a combinação perfeita de calor e técnicas de deslizamento tradicionais.
-                </p>
-                <button class="btn btn-custom-dark btn-sm">Learn More</button>
-            </div>
-            <div class="col-md-6 mb-4 mb-md-0">
-                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=800" alt="Relaxed Man" class="img-fluid rounded-custom img-cover" style="max-height: 350px;">
-            </div>
-        </div>
-    </section>
-
-    <section class="container-fluid p-0 bg-light-blue my-5">
-        <div class="row g-0 align-items-center">
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800" alt="Therapy Benefits" class="img-cover">
-            </div>
-            <div class="col-md-6 p-5">
-                <span class="text-uppercase small text-muted fw-bold">How it helps you</span>
-                <h2 class="my-3 fw-bold">Where can a Hot Stone Massage help?</h2>
-                
-                <div class="my-4">
-                    <button 
-                        v-for="tab in benefitTabs" 
-                        :key="tab.id"
-                        @click="activeBenefitTab = tab.id"
-                        :class="['btn btn-outline-custom', { active: activeBenefitTab === tab.id }]"
-                    >
-                        {{ tab.title }}
-                    </button>
-                </div>
-
-                <div class="tab-content mt-3">
-                    <p class="text-muted animate-fade-in">
-                        {{ currentBenefitText }}
+        <section class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-md-6 split-image"></div>
+                <div class="col-md-6 split-text-box">
+                    <span class="text-uppercase small text-white-50 tracking-wide mb-2">Clube de Vantagens</span>
+                    <h2 class="font-serif mb-4" style="font-size: 2.8rem;">Tradição e Assinatura</h2>
+                    <p class="text-white-50 mb-5" style="max-width: 450px;">
+                        Descubra nossos planos de assinatura mensal para barbearia ou rituais de hidratação e escova recorrentes no salão. Praticidade impecável.
                     </p>
+                    <div>
+                        <a href="#" class="btn btn-custom-outline">Conhecer Planos</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container-fluid p-0 bg-light-pink">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-            <div class="col-md-6 p-5">
-                <span class="text-uppercase small text-muted fw-bold">Customization</span>
-                <h2 class="my-3 fw-bold">Your massage, made personal</h2>
+        <section class="section-padding">
+            <div class="container">
                 
-                <div class="my-4">
-                    <button 
-                        v-for="tab in personalTabs" 
-                        :key="tab.id"
-                        @click="activePersonalTab = tab.id"
-                        :class="['btn btn-outline-custom', { active: activePersonalTab === tab.id }]"
-                    >
-                        {{ tab.title }}
-                    </button>
+                <div class="text-center mb-5">
+                    <span class="subtitle-mini">Destaques da Semana</span>
+                    <h2 class="section-title">Rituais de Assinatura Premium</h2>
                 </div>
 
-                <div class="tab-content mt-3">
-                    <p class="text-muted">
-                        {{ currentPersonalText }}
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800" alt="Personalized Treatment" class="img-cover">
-            </div>
-        </div>
-    </section>
-
-    <section class="container my-5 py-5">
-        <h2 class="text-center mb-5 fw-bold">From arrival to after care</h2>
-        <div class="row align-items-center">
-            <div class="col-md-5 pe-md-5">
-                
-                <div class="accordion-item-custom">
-                    <div class="accordion-header-custom" @click="toggleAccordion(1)">
-                        <span>Before your treatment</span>
-                        <span>{{ accordionOpen === 1 ? '−' : '+' }}</span>
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <img :src="tratamentos[0].imagem" :alt="tratamentos[0].nome" class="treatment-img shadow-sm">
                     </div>
-                    <div v-show="accordionOpen === 1" class="accordion-body-custom">
-                        Recomendamos chegar 15 minutos antes para preencher sua ficha de anamnese. Evite refeições pesadas logo antes da sessão e mantenha-se hidratado.
+                    <div class="col-md-6 pl-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[0].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[0].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
+                            <a href="#" class="btn btn-navy">Agendar</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="accordion-item-custom">
-                    <div class="accordion-header-custom" @click="toggleAccordion(2)">
-                        <span>During your treatment</span>
-                        <span>{{ accordionOpen === 2 ? '−' : '+' }}</span>
-                    </div>
-                    <div v-show="accordionOpen === 2" class="accordion-body-custom">
-                        Seu terapeuta aplicará óleo ou loção e usará as pedras aquecidas como extensões das próprias mãos, além de posicioná-las em pontos estratégicos do corpo.
-                    </div>
-                </div>
+                <hr class="my-5" style="border-color: var(--accent-soft);">
 
-                <div class="accordion-item-custom">
-                    <div class="accordion-header-custom" @click="toggleAccordion(3)">
-                        <span>After your treatment</span>
-                        <span>{{ accordionOpen === 3 ? '−' : '+' }}</span>
+                <div class="row align-items-center pb-5">
+                    <div class="col-md-6 order-md-2 mb-4 mb-md-0">
+                        <img :src="tratamentos[1].imagem" :alt="tratamentos[1].nome" class="treatment-img shadow-sm">
                     </div>
-                    <div v-show="accordionOpen === 3" class="accordion-body-custom">
-                        Beba bastante água para ajudar a eliminar as toxinas liberadas. Evite exercícios físicos intensos nas próximas horas para prolongar o relaxamento muscular.
+                    <div class="col-md-6 order-md-1 pr-md-5">
+                        <h3 class="font-serif mb-3" style="font-size: 2.2rem; color: var(--primary-navy);">{{ tratamentos[1].nome }}</h3>
+                        <div class="mb-3">
+                            <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
+                        </div>
+                        <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
+                            <a href="#" class="btn btn-navy">Agendar</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="text-center text-md-start mt-4">
-                    <button class="btn btn-custom-dark">Find a Spa</button>
                 </div>
 
             </div>
-            <div class="col-md-7 mt-4 mt-md-0">
-                <div class="position-relative text-center">
-                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&q=80&w=800" alt="Spa Ambience" class="img-fluid rounded-custom w-100 shadow-sm">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            // Estado das Abas do Bloco "Where can a Hot Stone Massage help?"
-            activeBenefitTab: 1,
-            benefitTabs: [
-                { id: 1, title: 'Muscle Relaxation', text: 'O calor gerado pelas pedras quentes ajuda a relaxar os músculos tensos, permitindo que o massoterapeuta acesse tecidos mais profundos de forma indolor e eficaz.' },
-                { id: 2, title: 'Stress Relief', text: 'O calor terapêutico acalma o sistema nervoso central, reduzindo significativamente os níveis de cortisol e proporcionando um alívio mental profundo contra a ansiedade do dia a dia.' },
-                { id: 3, title: 'Circulation', text: 'À medida que o calor se expande pelos vasos sanguíneos, ele melhora o fluxo de circulação por todo o corpo, oxigenando melhor as células e acelerando a recuperação muscular.' }
-            ],
-            
-            // Estado das Abas do Bloco "Your massage, made personal"
-            activePersonalTab: 1,
-            personalTabs: [
-                { id: 1, title: 'Classic', text: 'Uma abordagem tradicional que equilibra o deslizamento suave das pedras com pressões pontuais em áreas de acúmulo de estresse comum, como costas e ombros.' },
-                { id: 2, title: 'Deep Tissue', text: 'Focado em dores crônicas. O calor das pedras prepara a musculatura rígida para que pressões mais profundas e firmes resolvam nós de tensão persistentes.' },
-                { id: 3, title: 'Relief', text: 'Ideal para quem busca reenergização completa. Foco total em reestabelecer o bem-estar físico e mental de forma leve e totalmente revigorante.' }
-            ],
-
-            // Estado do Accordion (Seção Final)
-            accordionOpen: 1
-        },
-        computed: {
-            currentBenefitText() {
-                const tab = this.benefitTabs.find(t => t.id === this.activeBenefitTab);
-                return tab ? tab.text : '';
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                categoriaAtiva: 'salao', 
+                diferenciais: [
+                    {
+                        titulo: "Atendimento Especializado Unissex",
+                        descricao: "Duas atmosferas completas no mesmo espaço: a delicadeza e as técnicas avançadas do salão de alta costura ao lado do ambiente focado na velha escola de barbeiros."
+                    },
+                    {
+                        titulo: "Produtos de Padrão Internacional",
+                        descricao: "Utilizamos pomadas importadas, óleos vegetais de alta performance e as marcas de coloração e tratamento mais consagradas do mercado mundial."
+                    },
+                    {
+                        titulo: "Conforto e Concorrência Zero",
+                        descricao: "Bebidas exclusivas, espaço de convivência aconchegante e um agendamento inteligente para você nunca precisar esperar."
+                    }
+                ],
+                solucoes: {
+                    salao: {
+                        titulo: "Salão de Alta Performance",
+                        tags: ["Corte Visagista", "Mechas & Balayage", "Terapia Capilar"],
+                        descricao: "Transformações cromáticas, mechas sutis e os cortes que estão moldando as passarelas urbanas. Nossos especialistas mapeiam sua simetria facial para alinhar cortes e cores que valorizam a sua essência natural.",
+                        imagem: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800"
+                    },
+                    barbearia: {
+                        titulo: "Barbearia de Elite",
+                        tags: ["Corte Razor Fade", "Barba com Toalha Quente", "Pigmentação"],
+                        descricao: "Técnicas clássicas de navalha combinadas com os cortes modernos degradês. Nosso ritual de barba inclui toalhas aquecidas, massagem facial e óleos hidratantes para prevenir irritações e alinhar os fios perfeitamente.",
+                        imagem: "https://images.unsplash.com/photo-1593702295094-aea22597af65?q=80&w=800"
+                    }
+                },
+                tratamentos: [
+                    {
+                        nome: "Ritual Spa da Barba & Rosto",
+                        tags: ["Toalha Quente", "Esfoliação Suave", "Alinhamento a Laser"],
+                        descricao: "Um tratamento terapêutico clássico para o homem moderno. Remove as células mortas da pele, desinflama os poros do pescoço e desenha as linhas da barba com precisão cirúrgica e hidratação profunda.",
+                        imagem: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800"
+                    },
+                    {
+                        nome: "Mechas de Assinatura & Glow",
+                        tags: ["Morena Iluminada", "Loiro Confraria", "Plex Protector"],
+                        descricao: "Técnica exclusiva de clareamento pontual desenhada para criar pontos de luz naturais ao redor do rosto. Acompanha nosso protetor de ligações químicas para blindar os fios contra o ressecamento.",
+                        imagem: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?q=80&w=800"
+                    }
+                ]
             },
-            currentPersonalText() {
-                const tab = this.personalTabs.find(t => t.id === this.activePersonalTab);
-                return tab ? tab.text : '';
+            computed: {
+                conteudoCategoria() {
+                    return this.solucoes[this.categoriaAtiva];
+                }
             }
-        },
-        methods: {
-            toggleAccordion(id) {
-                // Se clicar no que já está aberto, fecha. Se não, abre o selecionado.
-                this.accordionOpen = this.accordionOpen === id ? null : id;
-            }
-        }
-    });
-</script>
-
+        });
+    </script>
 </body>
 </html>
