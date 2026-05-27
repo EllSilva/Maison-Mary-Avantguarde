@@ -7,16 +7,20 @@ export default {
                      categoriaAtiva: 'salao', 
                 diferenciais: [
                     {
-                        titulo: "Atendimento Especializado Unissex",
-                        descricao: "Duas atmosferas completas no mesmo espaço: a delicadeza e as técnicas avançadas do salão de alta costura ao lado do ambiente focado na velha escola de barbeiros."
+                        titulo: "Biossegurança e Esterilização",
+                        descricao: "Priorizamos a sua saúde e segurança com instrumentos totalmente esterilizados em autoclave e materiais descartáveis, garantindo um atendimento seguro e confiável."
                     },
                     {
-                        titulo: "Produtos de Padrão Internacional",
-                        descricao: "Utilizamos pomadas importadas, óleos vegetais de alta performance e as marcas de coloração e tratamento mais consagradas do mercado mundial."
+                        titulo: "Alongamentos e Fortalecimento de Unhas",
+                        descricao: "Realizamos aplicações em Gel, Fibra de Vidro e Acrigel, proporcionando unhas resistentes, naturais e elegantes, com excelente durabilidade e acabamento sofisticado"
                     },
                     {
-                        titulo: "Conforto e Concorrência Zero",
-                        descricao: "Bebidas exclusivas, espaço de convivência aconchegante e um agendamento inteligente para você nunca precisar esperar."
+                        titulo: "Esmaltação Premium & Gel",
+                        descricao: "Utilizamos produtos de elevada qualidade para oferecer brilho intenso, cores vibrantes e longa duração, mantendo suas unhas bonitas e impecáveis por muito mais tempo."
+                    },
+                    {
+                        titulo: "Spa das Mãos e Pés",
+                        descricao: "Experimente momentos de relaxamento com tratamentos hidratantes, esfoliação revitalizante e massagens que promovem conforto, suavidade e bem-estar."
                     }
                 ],
                 solucoes: {
@@ -35,18 +39,18 @@ export default {
                 },
                 tratamentos: [
                     {
-                        nome: "Tratamento da Barba & Cabelo",
-                        tags: ["Saúde Capilar Masculina", "Hidratação Capilar", "Fortalecimento dos Fios","Tratamento da Barba"],
-                        descricao: "Um cuidado profissional pensado para manter a imagem masculina sempre impecável, saudável e bem definida. Este tratamento combina técnicas de higiene, hidratação e precisão para realçar o estilo natural da barba e do cabelo.",
-                        imagem: "./assets/img/servicos/cabelo9.jpg"
+                        nome: "Manicure & Extensões de Luxo",
+                        tags: ["Gel Moldado", "Blindagem Diamante", "Nail Art Exclusiva","Fibra de Vidro","Acrigel Premium"],
+                        descricao: " Da manicure especializada com acabamento impecável às extensões de última geração, oferecemos técnicas modernas que garantem elegância, resistência e aparência natural. Personalizamos cada detalhe para valorizar o formato das suas mãos, criando unhas sofisticadas nos estilos Almond, Stiletto, Quadrada, Bailarina e Oval.  ",
+                        imagem: "./assets/img/servicos/unhas5.jpeg"
                     },
 
         
                     {
-                        nome: "Tratamento Capilar & Glow",
-                        tags: ["Hidratação profunda", "Nutrição dos fios", "Reconstrução da fibra capilar", "Loiro Confraria", "Morena Iluminada", "Loiro Confraria", "Plex Protector"],
-                        descricao: "Técnica exclusiva de clareamento pontual desenhada para criar pontos de luz naturais ao redor do rosto. Acompanha nosso protetor de ligações químicas para blindar os fios contra o ressecamento.",
-                        imagem: "./assets/img/servicos/cabelo8.jpeg"
+                        nome: "Pedicure & Cuidados Premium para Unhas",
+                        tags: ["Pedicure em Gel", "Pedicure Spa", "Pedicure Luxury", "Nail Care Pedicure", "Pedicure Express"],
+                        descricao: "Oferecemos um serviço completo de pedicure focado na saúde, beleza e valorização das unhas dos pés. Desde a limpeza e modelagem perfeita até à esmaltação premium, cada detalhe é executado com técnicas profissionais para garantir um acabamento elegante e duradouro.",
+                        imagem: "./assets/img/servicos/unhas9.jpg"
                     }
                 ],
                 

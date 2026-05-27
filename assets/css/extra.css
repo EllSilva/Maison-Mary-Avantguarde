@@ -1,4 +1,4 @@
-   /* AREA DE MASSAGEM */
+   /* AREA DE MASSAGEM  hero-section-unhas*/
 
    :root {
        --text-dark: #1d2731;
@@ -173,6 +173,48 @@
         min-height: 100dvh;
     }
 }
+ 
+   /* Hero Section */
+ .hero-section-unhas {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Imagem + gradiente */
+.hero-section-unhas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.85) 40%,
+            rgba(0, 0, 0, 0.1) 100%
+        ),
+        url('../img/servicos/unhas-capa.jpg') center center no-repeat;
+
+    background-size: cover;
+    animation: zoomHero 15s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* Conteúdo fica acima da imagem */
+.hero-section-unhas > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero-section-unhas {
+        min-height: 100dvh;
+    }
+}
 
 @keyframes zoomHero {
     from {
@@ -182,6 +224,7 @@
         transform: scale(1.15);
     }
 }
+
 
 
    .hero-title {
@@ -306,6 +349,12 @@
 
      .split-image2 {
        background: url('../img/servicos/cabelo.jpeg') no-repeat center center;
+       background-size: cover;
+       min-height: 450px;
+   }
+
+      .split-image3 {
+       background: url('../img/servicos/unhas2.jpeg') no-repeat center center;
        background-size: cover;
        min-height: 450px;
    }
