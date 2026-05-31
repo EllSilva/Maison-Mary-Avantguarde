@@ -1,5 +1,7 @@
 /********** Template CSS page-header **********/
- 
+ html {
+    scroll-behavior: smooth;
+}
  
 /*** Spinner ***/
 #spinner {

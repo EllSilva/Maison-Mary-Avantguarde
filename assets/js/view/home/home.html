@@ -1,12 +1,12 @@
 <div>
 
-    <!-- Hero Start  embros da Nossos Serviços -->
+    <!-- Hero Start  PA & Salão de beleza-->
     <div class="container-fluid p-0 hero-header bg-light mb-5">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
                 <div class="col-lg-6 hero-header-text py-5">
                     <div class="py-5 px-3 ps-lg-0">
-                        <h1 class="font-dancing-script text-primary animated slideInLeft">Bem-vindo(a) a</h1>
+                        <h1 class="font-dancing-script text-primary animated slideInDown">Bem-vindo(a) a</h1>
                         <h1 class="display-1 mb-4 animated slideInLeft">Maison Mary Avantguarde</h1>
                         <div class="row g-4 animated slideInLeft">
                             <div class="col-md-6">
@@ -22,10 +22,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center">
-                                    <div class=" btn btn-primary flex-shrink-0"  href="#" @click.prevent="scrollTo('marcacao')">
-                                         Agenda Marcação   
+                                    <div class=" btn btn-primary flex-shrink-0" href="#"
+                                        @click.prevent="scrollTo('marcacao')">
+                                        Agenda Marcação
                                     </div>
-                                  
+
                                 </div>
                             </div>
                         </div>
@@ -39,11 +40,12 @@
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide imagem-container" v-for="(slide, index) in slides"
                                         :key="index">
-                                        <img :src="slide.img" class="slide-img" alt="Beauty Salon">
                                         <div class="content">
-                                            <span>{{ slide.subtitle }}</span>
-                                            <h2>{{ slide.title }}</h2>
+                                            <span class="" data-aos="fade-up">{{ slide.subtitle }}</span>
+                                            <h3 class="" data-aos="fade-up">{{ slide.title }}</h3>
                                         </div>
+                                        <img :src="slide.img" class="slide-img" alt="Beauty Salon">
+
                                     </div>
                                 </div>
                             </div>
@@ -73,6 +75,25 @@
     <!-- Hero End -->
 
 
+
+    <div>
+
+
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+
+                    <a style="text-align: center;" class="btn-fechar">Saber
+                        mais</a>
+
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
+
     <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container">
@@ -95,27 +116,27 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h1 class="font-dancing-script text-primary">Sobre Nós</h1>
-                    <h1 class="mb-5">Beleza • Confiança • Elegância</h1>
+                    <h1 class="mb-5 slideInLeft">Beleza • Confiança • Elegância</h1>
                     <p class="mb-4">A Maison Mary Avantguarde é um espaço dedicado à beleza, bem-estar e autoestima,
                         criado para oferecer experiências únicas e serviços de alta qualidade.</p>
                     <div class="row g-3 mb-5">
                         <div class="col-sm-6">
                             <div class="bg-light text-center p-4">
-                                <i class="fas fa-calendar-alt fa-4x text-primary"></i>
-                                <h1 class="display-5" data-toggle="counter-up">25</h1>
+                                <i class="fas fa-calendar-alt fa-3x text-primary"></i>
+                                <h1 class="display-1" data-toggle="counter-up">2</h1>
                                 <p class="text-dark text-uppercase mb-0"> Anos de experiência</p>
                             </div>
 
                         </div>
                         <div class="col-sm-6">
                             <div class="bg-light text-center p-4">
-                                <i class="fas fa-users fa-4x text-primary"></i>
-                                <h1 class="display-5" data-toggle="counter-up">899</h1>
+                                <i class="fas fa-users fa-3x text-primary"></i>
+                                <h1 class="display-1" data-toggle="counter-up">77</h1>
                                 <p class="text-dark text-uppercase mb-0">Clientes satisfeitos</p>
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-primary text-uppercase px-5 py-3" href="#/sobre">Saber mais</a>
+                    <a class="btn btn-primary text-uppercase px-5 py-1" href="#/sobre">Saber mais</a>
                 </div>
             </div>
         </div>
@@ -124,7 +145,7 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid service py-5">
+    <div class="container-fluid service py-5" id="servicos">
         <div class="container">
             <div class="text-center wow fadeIn" data-wow-delay="0.1s">
                 <h1 class="font-dancing-script text-primary">Nossos Serviços</h1>
@@ -136,9 +157,9 @@
                         <img class="img-fluid" src="./assets/img/cabelo.png" alt="">
                         <h3 class="mb-3">Cabelo</h3>
                         <p class="mb-3">
-
+                            Cortes modernos, coloração, penteados e tratamentos capilares que valorizam o seu estilo.
                         </p>
-                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                        <a class="btn btn-sm btn-primary text-uppercase" href="#/cabelo">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -147,9 +168,9 @@
                         <img class="img-fluid" src="./assets/img/makeup.png" alt="">
                         <h3 class="mb-3">Maquilhagem </h3>
                         <p class="mb-3">
-
+                            Looks naturais ou glamorosos para qualquer ocasião especial.
                         </p>
-                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                        <a class="btn btn-sm btn-primary text-uppercase" href="#/maquilhagem">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -159,9 +180,9 @@
                         <img class="img-fluid" src="./assets/img/manicure.png" alt="">
                         <h3 class="mb-3">Unhas</h3>
                         <p class="mb-3">
-
+                            Manicure e pedicure com design elegante e acabamento perfeito.
                         </p>
-                        <a class="btn btn-sm btn-primary text-uppercase my-2" href="">Leia mais <i
+                        <a class="btn btn-sm btn-primary text-uppercase my-2" href="#/unhas">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -171,18 +192,19 @@
                         <img class="img-fluid" src="./assets/img/estetica.png" alt="">
                         <h3 class="mb-3"> Estética & Face </h3>
                         <p class="mb-3">
-
+                            Cuidados profundos para uma pele mais limpa, saudável e luminosa.
                         </p>
-                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                        <a class="btn btn-sm btn-primary text-uppercase" href="#/estetica">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="service-item h-100 p-4 border-end wow fadeIn" data-wow-delay="0.3s">
                         <img class="img-fluid" src="./assets/img/massage.png" alt="">
-                        <h3 class="mb-3">Massagens & Wellness</h3>
+                        <h3 class="mb-3">Massagens & Emagrecimento</h3>
                         <p class="mb-3">
-
+                            Relaxamento e tratamentos corporais que ajudam a reduzir o stress, melhorar o bem-estar e
+                            modelar o corpo.
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -193,7 +215,7 @@
                         <img class="img-fluid" src="./assets/img/skin-care.png" alt="">
                         <h3 class="mb-3">Emagrecimento &Body Contour</h3>
 
-                        <a class="btn btn-sm btn-primary text-uppercase" href="">Leia mais <i
+                        <a class="btn btn-sm btn-primary text-uppercase" href="#/masagem">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -227,10 +249,10 @@
                         </p>
 
                         <div class="d-grid gap-3 col-11 col-sm-7 col-md-6 col-lg-6 mx-0 animate-item anim-4">
-                            <a class="btn btn-light btn-custom text-dark" href="#/sobre" >
+                            <a class="btn btn-light btn-custom text-dark" href="#/sobre">
                                 Saber mais
                             </a>
-                            <a class="btn btn-outline-light btn-custom" href="#" @click.prevent="scrollTo('marcacao')" >
+                            <a class="btn btn-outline-light btn-custom" href="#" @click.prevent="scrollTo('marcacao')">
                                 Faça Já a Sua Marcação
                             </a>
                         </div>
@@ -259,16 +281,16 @@
             <div class="col-md-6">
                 <div class="d-flex align-items-center h-100 bg-primary p-5">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <h1 class="font-dancing-script text-white">Preços</h1>
+                        <h1 class="font-dancing-script text-white">Beleza, Bem-Estar e Poupança</h1>
                         <h1 class="mb-0">SPA & Salão de beleza</h1>
-                        <h1 class="display-1 text-uppercase mb-5" style="letter-spacing: 10px;">Preços</h1>
+                        <h1 class="display-1 text-uppercase mb-5" style="letter-spacing: 10px;">promoções</h1>
                         <div class="row g-4 align-items-center">
 
                             <div class="col-lg-6">
-                                <p>Acompanhe as promoções e ofertas especiais da Maison Mary Avantguarde. Aproveite
-                                    descontos e condições exclusivas nos nossos serviços de beleza, estética e
-                                    bem-estar. ✨.</p>
-                                <a class="btn btn-dark" href="">Obtenha 20% de desconto</a>
+                                <p>Aproveite promoções especiais, descontos exclusivos e pacotes personalizados em
+                                    serviços de beleza, estética e bem-estar. Cuide da sua imagem com qualidade,
+                                    conforto e condições vantajosas, disponíveis por tempo limitado.</p>
+                                <a class="btn btn-dark" href="">Ofertas exclusivas</a>
                             </div>
                         </div>
                     </div>
@@ -400,7 +422,7 @@
             <h2>Agendar uma consulta</h2>
             <p class="mb-4" style="color: #fff;">Preencha os seus dados e escolha o serviço pretendido. A nossa equipa
                 entrará em contacto consigo para confirmar a sua marcação.</p>
-            <form class="appointment-form" @submit.prevent="enviarWhatsApp"> 
+            <form class="appointment-form" @submit.prevent="enviarWhatsApp">
                 <div class="form-group">
                     <input v-model="nome" type="text" placeholder="Seu nome" required>
                 </div>
@@ -408,12 +430,12 @@
                     <input v-model="email" type="email" placeholder="Seu e-mail" required>
                 </div>
                 <div class="form-group">
-                    <input v-model="dataConsulta" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
-                        onblur="(this.type='text')">
+                    <input v-model="dataConsulta" type="text" placeholder="Selecione a data"
+                        onfocus="(this.type='date')" onblur="(this.type='text')">
                 </div>
                 <div class="form-group">
-                    <input v-model="horaConsulta" type="text" placeholder="Selecione a hora" onfocus="(this.type='time')"
-                        onblur="(this.type='text')">
+                    <input v-model="horaConsulta" type="text" placeholder="Selecione a hora"
+                        onfocus="(this.type='time')" onblur="(this.type='text')">
                 </div>
                 <div class="form-group">
                     <select v-model="servico" required class="form-controlxx">
@@ -424,7 +446,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn-submit">Marque uma consulta</button>
+                    <button type="submit" class="btn-submit">Marque uma reserva</button>
                 </div>
             </form>
         </div>
@@ -447,14 +469,10 @@
                 <ul class="hours-list">
                     <li>
                         <span class="circle-icon"></span>
-                        <span class="day">Segunda – Sexta :</span>
-                        <span class="time">09h00 – 19h00</span>
+                        <span class="day">Segunda – Sábado :</span>
+                        <span class="time">08h00 – 21h00</span>
                     </li>
-                    <li>
-                        <span class="circle-icon"></span>
-                        <span class="day">Sábado :</span>
-                        <span class="time">09h00 – 15h00</span>
-                    </li>
+
                     <li>
                         <span class="circle-icon"></span>
                         <span class="day">Domingo :</span>
@@ -462,13 +480,11 @@
                     </li>
                 </ul>
 
-                <a href="#" class="btn-book">Reserve já</a>
+                <a style="text-align: center;" class="btn btn-primary px-5 py-1" @click="mostrarModal = true">Reserve
+                    já</a>
             </div>
         </div>
     </section>
-
-
-
 
     <!-- Nossos fundadores -->
     <div class="container-fluid overflow-hidden py-5">
@@ -590,9 +606,6 @@
         </div>
     </div>
     <!-- Blog End -->
-
-
-
 
 
 

@@ -9,6 +9,9 @@ Vue.component('p-menu', page_menu)
 import page_footer from './components/footer/home.js'
 Vue.component('p-footer', page_footer)
 
+import page_reserva from './components/reserva/home.js'
+Vue.component('p-reserva', page_reserva)
+
 import page_home from './view/home/home.js'
 Vue.component('p-home', page_home)
 
@@ -27,8 +30,6 @@ Vue.component('p-maquilhagem', page_maquilhagem)
 import page_unhas from './view/servicos/unhas.js'
 Vue.component('p-unhas', page_unhas)
 
-
-
 import page_sobre from './view/sobre/home.js'
 Vue.component('p-sobre', page_sobre)
 
@@ -40,26 +41,47 @@ Vue.component('p-contato', page_contato)
 
 Vue.use(Router)
 
-
-
 const routes = [
     { path: '/', component: { template: '<p-home></p-home>' } },
     { path: '/masagem', component: { template: '<p-masagem></p-masagem>' } },
     { path: '/cabelo', component: { template: '<p-cabelo></p-cabelo>' } },
-     { path: '/unhas', component: { template: '<p-unhas></p-unhas>' } },
-       { path: '/maquilhagem', component: { template: '<p-maquilhagem></p-maquilhagem>' } },
+    { path: '/unhas', component: { template: '<p-unhas></p-unhas>' } },
+    { path: '/maquilhagem', component: { template: '<p-maquilhagem></p-maquilhagem>' } },
     { path: '/estetica', component: { template: '<p-estetica></p-estetica>' } },
     { path: '/sobre', component: { template: '<p-sobre></p-sobre>' } },
     { path: '/galeria', component: { template: '<p-galeria></p-galeria>' } },
-
     { path: '/contato', component: { template: '<p-contato></p-contato>' } }
 ]
 
-const router = new Router({ routes })
+const router = new Router({
+    mode: 'hash', // ou remova esta linha se não usar hash
+    routes,
+
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition
+        }
+
+        return {
+            x: 0,
+            y: 0
+        }
+    }
+})
+
+router.afterEach(() => {
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }, 100)
+})
 
 new Vue({
     router,
     data: {}
 }).$mount('#app')
 
-;(async () => { })()
+    ; (async () => { })()

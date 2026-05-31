@@ -1,0 +1,40 @@
+<div>
+ 
+
+    <section class=" " id="marcacao">
+        <div class="overlay"></div>
+        <div class="appointment-container">
+            <h2>Agendar uma marcação</h2>
+            <p class="mb-4" style="color: #fff;">Preencha os seus dados e escolha o serviço pretendido. A nossa equipa
+                entrará em contacto consigo para confirmar a sua marcação.</p>
+            <form class="appointment-form" @submit.prevent="enviarWhatsApp"> 
+                <div class="form-group">
+                    <input v-model="nome" type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <input v-model="email" type="email" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <input v-model="dataConsulta" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
+                        onblur="(this.type='text')">
+                </div>
+                <div class="form-group">
+                    <input v-model="horaConsulta" type="text" placeholder="Selecione a hora" onfocus="(this.type='time')"
+                        onblur="(this.type='text')">
+                </div>
+                <div class="form-group">
+                    <select v-model="servico" required class="form-controlxx">
+                        <option value="">Selecione um serviço</option>
+                        <option v-for="item in servicos" :key="item" :value="item">
+                            {{ item }}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Marque uma reserva</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>

@@ -1,4 +1,22 @@
 <div>
+
+      <div>
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+ 
+
+                        <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
+
+    
     <header class="hero-section-unhas">
         <div class="container">
             <div class="row">
@@ -10,10 +28,11 @@
                        Experimente o conceito de alta costura para as suas unhas. Rituais de spa, alongamentos avançados e nail art minimalista com biossegurança rigorosa.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                               <a href="#" class="btn btn-primary text-uppercase px-5 py-2">Reservar</a>
-                
-                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2 btn-outline-navy mr-3">Outros Serviços </a>
-                     </div>
+                    
+                                <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+                        <a href="#/unhas" class="btn btn-primary btn-custom-outline mb-2">Serviços de Cabelo</a>
+                    
+                        </div>
                     
                 </div>
             </div>

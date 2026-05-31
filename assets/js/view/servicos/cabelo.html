@@ -1,4 +1,22 @@
 <div>
+
+  <div>
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+ 
+
+                        <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
+
+
     <header class="hero-section-cabelo">
         <div class="container">
             <div class="row">
@@ -11,8 +29,8 @@
                         profissionais especialistas em tendências e visagismo.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#" class="btn btn-custom-white mr-3 mb-2">Reservar Cadeira / Horário</a>
-                        <a href="#" class="btn btn-custom-outline mb-2">Nossos Serviços</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+                        <a href="#/unhas" class="btn btn-primary btn-custom-outline mb-2">Serviços de unhas</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +100,8 @@
                     </p>
 
                     <div>
-                        <a href="#" class="btn btn-navy">Ver Menu de Serviços</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+
                     </div>
                 </div>
             </div>
@@ -139,10 +158,7 @@
                         <span class="badge-feature" v-for="tag in tratamentos[0].tags">✓ {{ tag }}</span>
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
-                        <a href="#" class="btn btn-navy">Agendar</a>
-                    </div>
+               
                 </div>
             </div>
 
@@ -159,11 +175,9 @@
                         <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
-                    <div class="d-flex">
-                        <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
-                        <a href="#" class="btn btn-navy">Agendar</a>
-                    </div>
-                </div>
+                  
+                </div> <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+
             </div>
 
         </div>

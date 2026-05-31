@@ -3,6 +3,8 @@ import get_template from "../../components/get_template.js";
 export default {
   data: function () {
     return {
+        
+            mostrarModal: false,
           pdfUrl: './assets/img/servicos/listagem-artigos.pdf',
                      categoriaAtiva: 'salao', 
                 diferenciais: [
