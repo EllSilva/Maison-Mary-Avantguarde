@@ -15,6 +15,9 @@ Vue.component('p-reserva', page_reserva)
 import page_home from './view/home/home.js'
 Vue.component('p-home', page_home)
 
+import page_preco from './view/preco/home.js'
+Vue.component('p-preco', page_preco)
+
 import page_masagem from './view/servicos/masagem.js'
 Vue.component('p-masagem', page_masagem)
 
@@ -50,7 +53,8 @@ const routes = [
     { path: '/estetica', component: { template: '<p-estetica></p-estetica>' } },
     { path: '/sobre', component: { template: '<p-sobre></p-sobre>' } },
     { path: '/galeria', component: { template: '<p-galeria></p-galeria>' } },
-    { path: '/contato', component: { template: '<p-contato></p-contato>' } }
+    { path: '/contato', component: { template: '<p-contato></p-contato>' } },
+    { path: '/precos', component: { template: '<p-preco></p-preco>' } }
 ]
 
 const router = new Router({

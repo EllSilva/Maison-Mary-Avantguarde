@@ -1,6 +1,6 @@
 <div>
 
-    <!-- Hero Start  PA & Salão de beleza-->
+    <!-- Hero Start  Beleza -->
     <div class="container-fluid p-0 hero-header bg-light mb-5">
         <div class="container p-0">
             <div class="row g-0 align-items-center">
@@ -76,23 +76,6 @@
 
 
 
-    <div>
-
-
-        <transition name="slide-side">
-            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
-                <div class="modal-container">
-                    <p-reserva></p-reserva>
-
-                    <a style="text-align: center;" class="btn-fechar">Saber
-                        mais</a>
-
-                </div>
-            </div>
-        </transition>
-
-    </div>
-
 
     <!-- About Start -->
     <div class="container-fluid py-5">
@@ -114,6 +97,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <h1 class="font-dancing-script text-primary">Sobre Nós</h1>
                     <h1 class="mb-5 slideInLeft">Beleza • Confiança • Elegância</h1>
@@ -121,17 +105,15 @@
                         criado para oferecer experiências únicas e serviços de alta qualidade.</p>
                     <div class="row g-3 mb-5">
                         <div class="col-sm-6">
-                            <div class="bg-light text-center p-4">
-                                <i class="fas fa-calendar-alt fa-3x text-primary"></i>
-                                <h1 class="display-1" data-toggle="counter-up">2</h1>
+                            <div class="bg-light text-center p-4"> 
+                                <h1 class="display-2" data-toggle="counter-up">2</h1>
                                 <p class="text-dark text-uppercase mb-0"> Anos de experiência</p>
                             </div>
 
                         </div>
                         <div class="col-sm-6">
-                            <div class="bg-light text-center p-4">
-                                <i class="fas fa-users fa-3x text-primary"></i>
-                                <h1 class="display-1" data-toggle="counter-up">77</h1>
+                            <div class="bg-light text-center p-4"> 
+                                <h1 class="display-2" data-toggle="counter-up">77</h1>
                                 <p class="text-dark text-uppercase mb-0">Clientes satisfeitos</p>
                             </div>
                         </div>
@@ -192,7 +174,7 @@
                         <img class="img-fluid" src="./assets/img/estetica.png" alt="">
                         <h3 class="mb-3"> Estética & Face </h3>
                         <p class="mb-3">
-                            Cuidados profundos para uma pele mais limpa, saudável e luminosa.
+                          Soluções estéticas dedicadas à revitalização e ao equilíbrio da sua pele. Tenha uma pele mais limpa, saudável e radiante.
                         </p>
                         <a class="btn btn-sm btn-primary text-uppercase" href="#/estetica">Leia mais <i
                                 class="bi bi-arrow-right"></i></a>
@@ -229,12 +211,12 @@
 
 
 
-
-    <section class="hero-section d-flex align-items-center px-3 px-md-5">
-
-        <div class="container-fluid">
+  <div class="wrapper">
+    <main>
+      <section class="module parallax parallax-1 ">
+        <div class="container container-fluid parallax-texto  px-3 px-md-5">
             <div class="row">
-                <div class="col-12 col-md-8 col-lg-6">
+                <div class="col-12 col-md-9 col-lg-10">
 
                     <div class="hero-content text-white">
 
@@ -248,13 +230,11 @@
                             {{ description }}
                         </p>
 
-                        <div class="d-grid gap-3 col-11 col-sm-7 col-md-6 col-lg-6 mx-0 animate-item anim-4">
-                            <a class="btn btn-light btn-custom text-dark" href="#/sobre">
-                                Saber mais
-                            </a>
-                            <a class="btn btn-outline-light btn-custom" href="#" @click.prevent="scrollTo('marcacao')">
-                                Faça Já a Sua Marcação
-                            </a>
+
+                        <div class="d-flex flex-wrap gap-3">
+                            <a @click.prevent="scrollTo('marcacao')" class="btn btn-primary flex-shrink-0"> Faça Já a
+                                Sua Marcação </a>
+                            <a href="#/sobre" class="btn btn-primary btn-custom-outline mb-2"> Saber mais</a>
                         </div>
 
                     </div>
@@ -262,84 +242,72 @@
                 </div>
             </div>
         </div>
-
-        <div class="hero-image-overlay"></div>
-
-    </section>
-
-
-
-
-
-
+      </section>
+  
+    </main>
+  </div>
 
 
 
     <!-- Preços Start -->
-    <div class="container-fluid price px-0">
+    <div class="container-fluid px-0">
         <div class="row g-0">
             <div class="col-md-6">
                 <div class="d-flex align-items-center h-100 bg-primary p-5">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
                         <h1 class="font-dancing-script text-white">Beleza, Bem-Estar e Poupança</h1>
                         <h1 class="mb-0">SPA & Salão de beleza</h1>
-                        <h1 class="display-1 text-uppercase mb-5" style="letter-spacing: 10px;">promoções</h1>
+                        <h1 class="display-4 text-uppercase mb-5" style="letter-spacing: 10px;">Precos</h1>
                         <div class="row g-4 align-items-center">
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-10">
                                 <p>Aproveite promoções especiais, descontos exclusivos e pacotes personalizados em
                                     serviços de beleza, estética e bem-estar. Cuide da sua imagem com qualidade,
                                     conforto e condições vantajosas, disponíveis por tempo limitado.</p>
-                                <a class="btn btn-dark" href="">Ofertas exclusivas</a>
+                                <a class="btn btn-dark" href="#/precos">Confirma os nossos Preços</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 price">
                 <div class="h-100 bg-dark p-5">
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.1s">
                         <img class="img-fluid flex-shrink-0" src="./assets/img/price-1.jpg" alt="">
                         <div class="text-end px-4">
-                            <h6 class="text-uppercase text-primary">Penteados sociais e noivas</h6>
-                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                            <h6 class="text-uppercase text-primary">Cabelo & Tratamentos</h6>
+                            <h4 class="text-white font-work-sans mb-0">12.500 – 55.000</h4>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.2s">
                         <img class="img-fluid flex-shrink-0" src="./assets/img/price-2.jpg" alt="">
                         <div class="text-end px-4">
-                            <h6 class="text-uppercase text-primary">Massagem relaxante</h6>
-                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                            <h6 class="text-uppercase text-primary">Manicure & Pedicure</h6>
+                            <h4 class="text-white font-work-sans mb-0">8.500 – 15.000</h4>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.3s">
                         <img class="img-fluid flex-shrink-0" src="./assets/img/price-3.jpg" alt="">
                         <div class="text-end px-4">
-                            <h6 class="text-uppercase text-primary">Limpeza facial profunda</h6>
-                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                            <h6 class="text-uppercase text-primary">Depilação & Estética</h6>
+                            <h4 class="text-white font-work-sans mb-0">3.000 – 40.000</h4>
                         </div>
                     </div>
                     <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.4s">
                         <img class="img-fluid flex-shrink-0" src="./assets/img/price-4.jpg" alt="">
                         <div class="text-end px-4">
-                            <h6 class="text-uppercase text-primary">Manicure SPA</h6>
-                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
+                            <h6 class="text-uppercase text-primary">Spa & Corpo</h6>
+                            <h4 class="text-white font-work-sans mb-0">15.000 – 25.000</h4>
                         </div>
                     </div>
-                    <div class="price-item mb-3 wow fadeIn" data-wow-delay="0.5s">
-                        <img class="img-fluid flex-shrink-0" src="./assets/img/price-5.jpg" alt="">
-                        <div class="text-end px-4">
-                            <h6 class="text-uppercase text-primary">Mega Hair Premium</h6>
-                            <h3 class="text-white font-work-sans mb-0">109.000kz</h3>
-                        </div>
-                    </div>
+                   
 
                 </div>
             </div>
         </div>
     </div>
     <!-- Pricing End -->
-
+ 
 
     <!-- Gallery Start -->
     <div class="container-fluid gallery py-5">
@@ -470,7 +438,7 @@
                     <li>
                         <span class="circle-icon"></span>
                         <span class="day">Segunda – Sábado :</span>
-                        <span class="time">08h00 – 21h00</span>
+                        <span class="time">09h00 – 19h00</span>
                     </li>
 
                     <li>
@@ -480,7 +448,7 @@
                     </li>
                 </ul>
 
-                <a style="text-align: center;" class="btn btn-primary px-5 py-1" @click="mostrarModal = true">Reserve
+                <a style="text-align: center;" class="btn btn-primary px-5 py-1" @click.prevent="scrollTo('marcacao')" >Reserve
                     já</a>
             </div>
         </div>

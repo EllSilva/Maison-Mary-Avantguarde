@@ -1,15 +1,29 @@
 <div>
 
+    <div>
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+                    <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
     <section class="container-fluid p-0 bg-light-blue">
         <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
             <div class="col-md-6 p-5 p-lg-5 text-center text-md-start">
-                <h2 class="  font-dancing-script text-primary">Massagem</h2>
+                <h2 class="  font-dancing-script text-primary">Massagem, Emagrecimento & Body Contour</h2>
                 <h1 class="display-4 my-3 fw-bold">Renove o Corpo, <br>Revitalize a Mente</h1>
                 <p class="lead text-muted mb-4 fs-6" style="max-width: 450px;">
                     Desfrute de momentos de relaxamento e renovação com os nossos serviços de massagem, desenvolvidos
                     para aliviar tensões, reduzir o stress e promover o equilíbrio entre corpo e mente.
                 </p>
-                <a class="btn btn-primary text-uppercase px-5 py-2" href="#/">Reserve agora</a>
+                <a class="btn btn-primary text-uppercase px-5 py-2" @click="mostrarModal = true">Reserve agora</a>
+                
             </div>
             <div class="col-md-6">
                 <img src="./assets/img/servicos/massage2.png" alt="Hot Stone Therapy" class="img-cover"
@@ -166,9 +180,9 @@
 
                 <span class="text-uppercase small text-muted fw-bold">Confie em mãos especializadas e descubra uma nova
                     forma de cuidar do seu corpo e da sua mente. ✨</span>
-
+                <a class="btn btn-primary px-2 py-1" @click="mostrarModal = true">Agendar agora</a>
             </div>
-        </div>
+             </div>
     </section>
 
 

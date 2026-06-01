@@ -3,6 +3,7 @@ import get_template from "../../components/get_template.js";
 export default {
   data: function () {
     return {
+                mostrarModal: false,
        categoriaAtiva: 'facial', // Controla qual aba inicia aberta ('facial' ou 'corporal')
                 diferenciais: [
                     {
@@ -24,7 +25,7 @@ export default {
                         titulo: "Tratamentos Faciais",
                         tags: ["Limpeza Profunda", "Rejuvenescimento", "Peeling Químico"],
                         descricao: "Focados na saúde do rosto, nossos procedimentos faciais combatem marcas de expressão, acne e manchas, devolvendo a luminosidade natural e promovendo uma textura suave e uniforme desde a primeira visita.",
-                        imagem: "./assets/img/servicos/estetica2.jpeg"
+                        imagem: "./assets/img/servicos/estetica.jpg"
                     },
                     corporal: {
                         titulo: "Tratamentos Corporais",

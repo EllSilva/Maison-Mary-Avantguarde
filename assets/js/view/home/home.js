@@ -3,7 +3,7 @@ import get_template from "../../components/get_template.js";
 export default {
     data: function () {
         return {
-            
+
             nome: '',
             email: '',
             telefone: '',
@@ -25,9 +25,9 @@ export default {
                 'SPA Completo'
 
             ],
-  mostrarModal: false,
+            mostrarModal: false,
             subtitle: 'Maison Mary Avantguarde',
-            title: 'Beleza. Confiança. Elegância.',
+            title: 'Beleza Confiança. Elegância.',
             description: 'Realce a sua beleza, renove a sua confiança e desfrute de momentos únicos de bem-estar. Aproveite as nossas ofertas especiais e permita-se viver uma experiência de cuidado, sofisticação e elegância. 💖✨',
 
 
@@ -158,16 +158,16 @@ export default {
             requestAnimationFrame(animation);
         },
 
-      
+
 
     },
 
 
 
     async mounted() {
-          AOS.init({
-      duration: 1000,
-    });
+        AOS.init({
+            duration: 1000,
+        });
         // Inicializa o Swiper após o Vue montar o DOM
         const swiper = new Swiper(".mySwiper", {
             loop: true,
@@ -215,5 +215,5 @@ export default {
         });
 
     },
-  template: await get_template("./assets/js/view/home/home"),
+    template: await get_template("./assets/js/view/home/home"),
 };

@@ -4,6 +4,7 @@ export default {
     data: function () {
         return {
             // Estado das Abas do Bloco "Where can a Hot Stone Massage help?"
+              mostrarModal: false,
             activeBenefitTab: 1,
             categoriaAtiva: 'social',
             benefitTabs: [

@@ -1,14 +1,12 @@
 <div>
-
-  <div>
+Catálogo de Penteados & Preçário
+    <div>
         <transition name="slide-side">
             <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
                 <div class="modal-container">
                     <p-reserva></p-reserva>
- 
 
-                        <button class="close-btn" @click.self="mostrarModal = false">✕</button>
-
+                    <button class="close-btn" @click.self="mostrarModal = false">✕</button>
                 </div>
             </div>
         </transition>
@@ -29,7 +27,8 @@
                         profissionais especialistas em tendências e visagismo.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira /
+                            Horário</a>
                         <a href="#/unhas" class="btn btn-primary btn-custom-outline mb-2">Serviços de unhas</a>
                     </div>
                 </div>
@@ -72,7 +71,7 @@
                 <div class="d-flex justify-content-center mt-4">
                     <button class="btn btn-toggle" :class="{ active: categoriaAtiva === 'salao' }"
                         @click="categoriaAtiva = 'salao'">
-                        Salão Feminino
+                        Salão
                     </button>
                     <button class="btn btn-toggle" :class="{ active: categoriaAtiva === 'barbearia' }"
                         @click="categoriaAtiva = 'barbearia'">
@@ -100,7 +99,8 @@
                     </p>
 
                     <div>
-                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira /
+                            Horário</a>
 
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                         <span class="badge-feature" v-for="tag in tratamentos[0].tags">✓ {{ tag }}</span>
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
-               
+
                 </div>
             </div>
 
@@ -175,8 +175,8 @@
                         <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
-                  
-                </div> <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
+
+                </div> <a @click="mostrarModal = true" class="">Reservar Cadeira / Horário</a>
 
             </div>
 

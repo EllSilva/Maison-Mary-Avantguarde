@@ -25,7 +25,7 @@ export default {
             solucoes: {
                 salao: {
                     titulo: "Salão de Alta Performance",
-                    tags: ["Corte Visagista", "Penteados", "Coloração e Tonalização", "Mechas & Balayage", "Alisamento", "Escova e Modelagem", "Reconstrução da Fibra Capila", "Nutrição Capilar", "Terapia Capilar"],
+                    tags: ["Corte Visagista", "Penteados", "Botox Capilar ", "Coloração e Tonalização", "Mechas & Balayage", "Alisamento", "Escova e Modelagem", "Reconstrução da Fibra Capila", "Nutrição Capilar", "Terapia Capilar"],
                     descricao: "Transformações cromáticas, mechas sutis e os cortes que estão moldando as passarelas urbanas. Nossos especialistas mapeiam sua simetria facial para alinhar cortes e cores que valorizam a sua essência natural.",
                     imagem: "./assets/img/servicos/cabelo5.jpeg"
                 },

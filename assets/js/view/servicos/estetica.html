@@ -1,5 +1,21 @@
  <div>
-        <header class="hero-section">
+
+    
+    <div>
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+
+                    <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
+
+        <header class="hero-section-estetica">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -10,7 +26,7 @@
                             Nutra o seu corpo e rosto com tratamentos personalizados, desenhados para uma renovação profunda e relaxamento absoluto.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
-                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2 mr-3 mb-2">Agendar Agora</a>
+                            <a  @click="mostrarModal = true"  class="btn btn-primary text-uppercase px-5 py-2 mr-3 mb-2">Agendar Agora</a>
                       
                         </div>
                     </div>
@@ -35,7 +51,7 @@
                             <p class="text-muted small">{{ item.descricao }}</p>
                         </div>
 
-                        <a href="#" class="btn btn-primary text-uppercase px-3 py-1">Agendar Consulta</a>
+                        <a @click="mostrarModal = true"  class="btn btn-primary text-uppercase px-3 py-1">Agendar Consulta</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +100,7 @@
                         </p>
                         
                         <div>
-                            <a href="#" class="btn btn-primary text-uppercase px-3 py-1">Fazer Marcação</a>
+                            <a @click="mostrarModal = true"  class="btn btn-primary text-uppercase px-3 py-1">Fazer Marcação</a>
                         </div>
                     </div>
                 </div>
@@ -129,8 +145,7 @@
                         </div>
                         <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
                         <div class="d-flex">
-                            <a href="#" class="btn-outline-navy mr-3 btn btn-primary text-uppercase px-5 py-2">Saber Mais</a>
-                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
+                           <a @click="mostrarModal = true"  class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
                         </div>
                     </div>
                 </div>
@@ -147,9 +162,8 @@
                             <span class="badge-feature" v-for="tag in tratamentos[1].tags">✓ {{ tag }}</span>
                         </div>
                         <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
-                        <div class="d-flex">
-                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2 btn-outline-navy mr-3">Saber Mais</a>
-                            <a href="#" class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
+                        <div class="d-flex"> 
+                            <a @click="mostrarModal = true"  class="btn btn-primary text-uppercase px-5 py-2">Agendar</a>
                         </div>
                     </div>
                 </div>

@@ -114,122 +114,220 @@
 
 
 
-   h1,
-   h2,
-   h3,
-   .font-serif {
-       font-family: 'Playfair Display', serif;
-   }
 
    /* Hero Section */
-   .hero-section {
-       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)),
-           url('../img/servicos/estetica.jpg') no-repeat center center;
-       background-size: cover;
-       height: 80vh;
+
+   /* Hero Section */
+   .hero-section-estetica {
+       position: relative;
+       min-height: 80vh;
+
        display: flex;
        align-items: center;
-       color: #ffffff;
+       color: #fff;
+       overflow: hidden;
+   }
+
+   /* Imagem + gradiente */
+   .hero-section-estetica::before {
+       content: "";
+       position: absolute;
+       inset: 0;
+
+       background:
+           linear-gradient(90deg,
+               rgba(0, 0, 0, 1) 0%,
+               rgba(0, 0, 0, 0.85) 40%,
+               rgba(0, 0, 0, 0.1) 100%),
+           url('../img/servicos/estetica2.jpeg') center center no-repeat;
+
+       background-size: cover;
+       animation: zoomHero 15s ease-in-out infinite alternate;
+       z-index: 1;
+   }
+
+   /* Conteúdo fica acima da imagem */
+   .hero-section-estetica>* {
+       position: relative;
+       z-index: 2;
+   }
+ 
+
+
+
+
+   /* Hero Section */
+   .hero-section-beleza {
+       position: relative;
+       min-height: 80vh;
+
+       display: flex;
+       align-items: center;
+       color: #fff;
+       overflow: hidden;
+   }
+
+   /* Imagem + gradiente */
+   .hero-section-beleza::before {
+       content: "";
+       position: absolute;
+       inset: 0;
+
+       background:
+           linear-gradient(90deg,
+               rgba(0, 0, 0, 1) 0%,
+               rgba(0, 0, 0, 0.85) 40%,
+               rgba(0, 0, 0, 0.1) 100%),
+           url('../img/spa2.png') center center no-repeat;
+
+       background-size: cover;
+       animation: zoomHero 15s ease-in-out infinite alternate;
+       z-index: 1;
+   }
+
+   /* Conteúdo fica acima da imagem */
+   .hero-section-beleza>* {
+       position: relative;
+       z-index: 2;
+   }
+
+   @media (max-width: 768px) {
+       .hero-section-beleza {
+           min-height: 100dvh;
+       }
+  .hero-section-estetica {
+           min-height: 100dvh;
+       }
+
+       
+   }
+
+   @keyframes zoomHero {
+       from {
+           transform: scale(1);
+       }
+
+       to {
+           transform: scale(1.15);
+       }
+   }
+
+
+
+
+
+
+
+   /* Hero Section */
+   .hero-section-cabelo {
+       position: relative;
+       min-height: 80vh;
+       display: flex;
+       align-items: center;
+       color: #fff;
+       overflow: hidden;
+   }
+
+   /* Imagem + gradiente */
+   .hero-section-cabelo::before {
+       content: "";
+       position: absolute;
+       inset: 0;
+
+       background:
+           linear-gradient(90deg,
+               rgba(0, 0, 0, 1) 0%,
+               rgba(0, 0, 0, 0.85) 40%,
+               rgba(0, 0, 0, 0.1) 100%),
+           url('../img/servicos/cabelo2.jpeg') center center no-repeat;
+
+       background-size: cover;
+       animation: zoomHero 15s ease-in-out infinite alternate;
+       z-index: 1;
+   }
+
+   /* Conteúdo fica acima da imagem */
+   .hero-section-cabelo>* {
+       position: relative;
+       z-index: 2;
+   }
+
+   @media (max-width: 768px) {
+       .hero-section-cabelo {
+           min-height: 100dvh;
+       }
    }
 
    /* Hero Section */
- .hero-section-cabelo {
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    overflow: hidden;
-}
+   .hero-section-unhas {
+       position: relative;
+       min-height: 80vh;
+       display: flex;
+       align-items: center;
+       color: #fff;
+       overflow: hidden;
+   }
 
-/* Imagem + gradiente */
-.hero-section-cabelo::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+   /* Imagem + gradiente */
+   .hero-section-unhas::before {
+       content: "";
+       position: absolute;
+       inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.85) 40%,
-            rgba(0, 0, 0, 0.1) 100%
-        ),
-        url('../img/servicos/cabelo2.jpeg') center center no-repeat;
+       background:
+           linear-gradient(90deg,
+               rgba(0, 0, 0, 1) 0%,
+               rgba(0, 0, 0, 0.85) 40%,
+               rgba(0, 0, 0, 0.1) 100%),
+           url('../img/servicos/unhas-capa.jpg') center center no-repeat;
 
-    background-size: cover;
-    animation: zoomHero 15s ease-in-out infinite alternate;
-    z-index: 1;
-}
+       background-size: cover;
+       animation: zoomHero 15s ease-in-out infinite alternate;
+       z-index: 1;
+   }
 
-/* Conteúdo fica acima da imagem */
-.hero-section-cabelo > * {
-    position: relative;
-    z-index: 2;
-}
+   /* Conteúdo fica acima da imagem */
+   .hero-section-unhas>* {
+       position: relative;
+       z-index: 2;
+   }
 
-@media (max-width: 768px) {
-    .hero-section-cabelo {
-        min-height: 100dvh;
-    }
-}
+   @media (max-width: 768px) {
+       .hero-section-unhas {
+           min-height: 100dvh;
+       }
+   .hero-title {
+       font-size: 1.5rem;
+       font-weight: 400;
+   }
+
+   }
  
-   /* Hero Section */
- .hero-section-unhas {
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    overflow: hidden;
-}
 
-/* Imagem + gradiente */
-.hero-section-unhas::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+   @keyframes zoomHero {
+       from {
+           transform: scale(1);
+       }
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0.85) 40%,
-            rgba(0, 0, 0, 0.1) 100%
-        ),
-        url('../img/servicos/unhas-capa.jpg') center center no-repeat;
-
-    background-size: cover;
-    animation: zoomHero 15s ease-in-out infinite alternate;
-    z-index: 1;
-}
-
-/* Conteúdo fica acima da imagem */
-.hero-section-unhas > * {
-    position: relative;
-    z-index: 2;
-}
-
-@media (max-width: 768px) {
-    .hero-section-unhas {
-        min-height: 100dvh;
-    }
-}
-
-@keyframes zoomHero {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.15);
-    }
-}
+       to {
+           transform: scale(1.15);
+       }
+   }
 
 
 
    .hero-title {
        font-size: 3.5rem;
        font-weight: 400;
+   }
+
+     @media (max-width: 768px) {
+     
+   .hero-title {
+       font-size: 1.8rem;
+       font-weight: 400;
+   }
+
    }
 
    .hero-title em {
@@ -347,13 +445,13 @@
        min-height: 450px;
    }
 
-     .split-image2 {
+   .split-image2 {
        background: url('../img/servicos/cabelo.jpeg') no-repeat center center;
        background-size: cover;
        min-height: 450px;
    }
 
-      .split-image3 {
+   .split-image3 {
        background: url('../img/servicos/unhas2.jpeg') no-repeat center center;
        background-size: cover;
        min-height: 450px;
@@ -396,103 +494,202 @@
 
 
 
- 
-        /* --- MODAL  --- */
-      
 
-        .btn-abrir {
-            padding: 12px 24px;
-            font-size: 16px;
-            background-color: #42b983;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+   /* --- MODAL  --- */
 
-        .btn-abrir:hover {
-            background-color: #35495e;
-        }
 
-        /* --- Estilos do Modal (Fundo Fixo) --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9); /* O fundo escurece */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            /* A transição do fundo permanece um fade suave */
-            transition: opacity 0.5s ease;
-        }
+   .btn-abrir {
+       padding: 12px 24px;
+       font-size: 16px;
+       background-color: #42b983;
+       color: white;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       transition: background 0.3s;
+   }
 
-        /* --- Estilos do Conteúdo do Modal (O que move) --- */
-        .modal-container { 
-            padding: 30px;
-            border-radius: 8px; 
-             
-            max-width: 100%;
-            text-align: center;
-            /* Definimos a transição padrão do movimento aqui também */
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-        }
+   .btn-abrir:hover {
+       background-color: #35495e;
+   }
 
-    .close-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: #ff4d4f;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: all .3s ease;
-    z-index: 9999;
-}
+   /* --- Estilos do Modal (Fundo Fixo) --- */
+   .modal-overlay {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.9);
+       /* O fundo escurece */
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       z-index: 9999;
+       /* A transição do fundo permanece um fade suave */
+       transition: opacity 0.5s ease;
+   }
 
-.close-btn:hover {
-    background: #d9363e;
-    transform: scale(1.1);
-}
+   /* --- Estilos do Conteúdo do Modal (O que move) --- */
+   .modal-container {
+       padding: 30px;
+       border-radius: 8px;
 
-        /* --- NOVAS Classes de Animação Direcional do Vue (Slide-Side) --- */
-        
-        /* 1. Definição da Animação (Ativa durante todo o processo) */
-        .slide-side-enter-active, .slide-side-leave-active {
-            transition: all 0.5s ease-in-out;
-            opacity: 1; /* Garante opacidade total no estado ativo */
-        }
+       max-width: 100%;
+       text-align: center;
+       /* Definimos a transição padrão do movimento aqui também */
+       transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+   }
 
-        /* 2. ESTADO INICIAL DE ENTRADA (Vem da Esquerda) */
-        .slide-side-enter {
-            transform: translateX(-100%); /* Começa totalmente fora da tela à esquerda */
-            opacity: 0; /* Começa invisível */
-        }
+   .close-btn {
+       position: fixed;
+       top: 20px;
+       right: 20px;
+       width: 45px;
+       height: 45px;
+       border: none;
+       border-radius: 50%;
+       background: #ff4d4f;
+       color: #fff;
+       font-size: 24px;
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+       transition: all .3s ease;
+       z-index: 9999;
+   }
 
-        /* 3. ESTADO FINAL DE SAÍDA (Vai para a Direita) */
-        .slide-side-leave-to {
-            transform: translateX(100%); /* Termina totalmente fora da tela à direita */
-            opacity: 0; /* Termina invisível */
-        }
+   .close-btn:hover {
+       background: #d9363e;
+       transform: scale(1.1);
+   }
 
-        /* Nota: Não precisamos definir .slide-side-enter-to ou .slide-side-leave
+   /* --- NOVAS Classes de Animação Direcional do Vue (Slide-Side) --- */
+
+   /* 1. Definição da Animação (Ativa durante todo o processo) */
+   .slide-side-enter-active,
+   .slide-side-leave-active {
+       transition: all 0.5s ease-in-out;
+       opacity: 1;
+       /* Garante opacidade total no estado ativo */
+   }
+
+   /* 2. ESTADO INICIAL DE ENTRADA (Vem da Esquerda) */
+   .slide-side-enter {
+       transform: translateX(-100%);
+       /* Começa totalmente fora da tela à esquerda */
+       opacity: 0;
+       /* Começa invisível */
+   }
+
+   /* 3. ESTADO FINAL DE SAÍDA (Vai para a Direita) */
+   .slide-side-leave-to {
+       transform: translateX(100%);
+       /* Termina totalmente fora da tela à direita */
+       opacity: 0;
+       /* Termina invisível */
+   }
+
+   /* Nota: Não precisamos definir .slide-side-enter-to ou .slide-side-leave
            pois o estado padrão do modal centralizado (transform: translateX(0)) 
            é o que queremos quando ele está visível. */
 
 
-        /* --- FIM MODAL  --- */
+   /* --- FIM MODAL  --- */
 
+   /* --- PREÇARIO  --- */
 
  
+:root{
+    --primary:#d79d39;
+    --secondary:#fd7e14;
+}
+
+.hero{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-weight:700;
+    font-size:3rem;
+}
+
+.hero p{
+    opacity:.9;
+    margin-top:10px;
+}
+
+.search-box{
+    margin-top:-40px;
+}
+
+.search-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.category-title{
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.service-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.service-card .card-header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    font-weight:600;
+    border:none;
+}
+
+.price{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.summary-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.badge-services{
+    background:var(--primary);
+    font-size:.9rem;
+}
+
+.empty{
+    text-align:center;
+    padding:80px 20px;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+}
+
+ 
+
+
+      /* --- FIM PREÇARIO  --- */

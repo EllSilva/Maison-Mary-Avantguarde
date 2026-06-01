@@ -1,14 +1,31 @@
 <div>
+
+
+    <div>
+        <transition name="slide-side">
+            <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
+                <div class="modal-container">
+                    <p-reserva></p-reserva>
+
+
+                    <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+
+                </div>
+            </div>
+        </transition>
+
+    </div>
+
  
     <section class="container-fluid p-0 bg-light-blue">
-        <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+        <div class="row g-0 align-items-center  flex-md-row">
             <div class="col-md-6 p-5 p-lg-5 text-center text-md-start">
                 <h2 class="  font-dancing-script text-primary">A Beleza em Sua Melhor Versão</h2>
                 <h1 class="display-4 my-3 fw-bold">A Arte de Realçar a Sua Beleza</h1>
                 <p class="lead text-muted mb-4 fs-6" style="max-width: 450px;">
                     Transforme a sua imagem com uma maquilhagem elegante e sofisticada. Valorizamos os seus traços naturais através de técnicas avançadas de visagismo, pele impecável e acabamentos de luxo, criando um visual exclusivo para cada ocasião.
                 </p>
-                <a class="btn btn-primary text-uppercase px-5 py-2" href="#/">Reserve agora</a>
+                <a class="btn btn-primary text-uppercase px-5 py-2" @click="mostrarModal = true" >Reserve agora</a>
             </div>
             <div class="col-md-6">
                 <img src="./assets/img/servicos/maquilhagens.png" alt="Hot Stone Therapy" class="img-cover"
@@ -18,7 +35,7 @@
     </section>
 
     <section class="container my-5 py-5">
-        <div class="row align-items-center">
+        <div class="row align-items-center my-5 px-3">
             <div class="col-md-5 mb-4 mb-md-0">
                 <img src="./assets/img/servicos/maquilhagem1.jpeg" alt="Massage Details"
                     class="img-fluid rounded-custom img-cover" style="max-height: 800px;">
@@ -52,7 +69,7 @@
 
     
         <section class=" section-padding bg-light-section" style="border-top: 1px solid var(--accent-soft);">
-            <div class="container my-5 ">
+            <div class="container my-5 px-3">
                 
                 <div class="text-center  ">
                     <span class="subtitle-mini">Nossos Estilos</span>
@@ -93,7 +110,8 @@
                         </p>
                         
                         <div>
-                            <a href="#" class="btn btn-navy">Ver Lookbook</a>
+                                 <a class="btn btn-primary text-uppercase px-5 py-2" @click="mostrarModal = true" >Reserve agora</a>
+            
                         </div>
                     </div>
                 </div>
@@ -101,7 +119,7 @@
             </div>
         </section>
 
-    <section class="container my-5 py-4">
+    <section class="container my-5 py-4 px-3">
         <div class="row align-items-center flex-column-reverse flex-md-row">
             <div class="col-md-6 pe-md-5">
                 <h2 class="font-dancing-script text-primary">Design de Olhar & Cílios de Luxo</h2>
@@ -125,7 +143,7 @@
 
  
  
-    <section class="container my-5 py-5">
+    <section class="container my-5 px-3">
         <h2 class="text-center mb-5 fw-bold">Desde a chegada até os cuidados posteriores</h2>
         <div class="row align-items-center">
             <div class="col-md-5 pe-md-5">

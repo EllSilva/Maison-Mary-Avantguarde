@@ -4,6 +4,7 @@ export default {
   data: function () {
     return {
         // Estado das Abas do Bloco "Where can a Hot Stone Massage help?"
+          mostrarModal: false,
             activeBenefitTab: 1,
             benefitTabs: [
                 { id: 1, title: 'Muscle Relaxation', text: 'O calor gerado pelas pedras quentes ajuda a relaxar os músculos tensos, permitindo que o massoterapeuta acesse tecidos mais profundos de forma indolor e eficaz.' },

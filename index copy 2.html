@@ -3,43 +3,449 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Botão Fechar</title>
+
+<title>Maison Mary Avantguarde - Tabela de Preços</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- Vue.js 2 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-.close-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: #ff4d4f;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: all .3s ease;
-    z-index: 9999;
+
+:root{
+    --primary:#d63384;
+    --secondary:#fd7e14;
 }
 
-.close-btn:hover {
-    background: #d9363e;
-    transform: scale(1.1);
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fa;
 }
+
+.hero{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-weight:700;
+    font-size:3rem;
+}
+
+.hero p{
+    opacity:.9;
+    margin-top:10px;
+}
+
+.search-box{
+    margin-top:-40px;
+}
+
+.search-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.category-title{
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+.service-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+.service-card .card-header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    font-weight:600;
+    border:none;
+}
+
+.price{
+    color:var(--primary);
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.summary-card{
+    border:none;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.badge-services{
+    background:var(--primary);
+    font-size:.9rem;
+}
+
+.empty{
+    text-align:center;
+    padding:80px 20px;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+}
+
 </style>
 </head>
 <body>
 
-<button class="close-btn" onclick="fechar()">✕</button>
+<div id="app">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="container">
+
+            <h1>
+                Maison Mary Avantguarde
+            </h1>
+
+            <p>
+                Tabela de Preços • Beleza • Estética • Bem-estar
+            </p>
+
+        </div>
+
+    </section>
+
+    <div class="container">
+
+        <!-- PESQUISA -->
+        <div class="search-box">
+
+            <div class="card search-card">
+
+                <div class="card-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-8">
+
+                            <input
+                                type="text"
+                                class="form-control form-control-lg"
+                                placeholder="Pesquisar serviço..."
+                                v-model="search">
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <select
+                                class="form-select form-select-lg"
+                                v-model="selectedCategory">
+
+                                <option value="">
+                                    Todas as categorias
+                                </option>
+
+                                <option
+                                    v-for="(items, category) in categories"
+                                    :key="category"
+                                    :value="category">
+
+                                    {{ category }} ({{ items.length }})
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RESUMO -->
+        <div class="card summary-card my-4">
+
+            <div class="card-body d-flex justify-content-between align-items-center">
+
+                <h5 class="mb-0">
+                    Serviços Encontrados
+                </h5>
+
+                <span class="badge badge-services rounded-pill">
+                    {{ totalFilteredServices }}
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- CATEGORIAS -->
+        <div
+            v-for="(items, category) in filteredServices"
+            :key="category"
+            class="mb-5">
+
+            <h2 class="category-title">
+
+                {{ category }}
+
+                <span class="badge bg-secondary ms-2">
+                    {{ items.length }}
+                </span>
+
+            </h2>
+
+            <div class="row g-4">
+
+                <div
+                    class="col-xl-3 col-lg-4 col-md-6"
+                    v-for="item in items"
+                    :key="item.ref">
+
+                    <div class="card service-card h-100">
+
+                        <div class="card-header">
+
+                            Ref. {{ item.ref }}
+
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+
+                            <h6 class="card-title mb-3">
+
+                                {{ item.name }}
+
+                            </h6>
+
+                            <div class="mt-auto">
+
+                                <div class="price">
+
+                                    {{ formatPrice(item.price) }} Kz
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SEM RESULTADOS -->
+        <div
+            class="empty"
+            v-if="Object.keys(filteredServices).length === 0">
+
+            <i class="bi bi-search display-1 text-muted"></i>
+
+            <h3 class="mt-3">
+                Nenhum serviço encontrado
+            </h3>
+
+            <p class="text-muted">
+                Tente pesquisar outro termo ou categoria.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script>
-function fechar() {
-    alert('Fechar janela');
-}
+
+new Vue({
+
+    el:'#app',
+
+    data:{
+
+        search:'',
+
+        selectedCategory:'',
+
+        categories:{
+
+            '💇‍♀️ Cabelo & Tratamentos':[
+
+                {ref:1,name:'Misse cabelo curto acima dos ombros',price:12500},
+                {ref:2,name:'Misse cabelo médio até os ombros',price:15000},
+                {ref:3,name:'Misse cabelo longo abaixo dos ombros',price:18000},
+                {ref:4,name:'Penteado simples',price:12000},
+                {ref:5,name:'Penteado elaborado',price:18000},
+                {ref:6,name:'Penteado de evento',price:25000}
+
+            ],
+
+            '💅 Manicure & Pedicure':[
+
+                {ref:18,name:'Manicure gel',price:10000},
+                {ref:19,name:'Extensão de unhas',price:15000},
+                {ref:20,name:'Pedicure simples',price:8500},
+                {ref:21,name:'Pedicure spa',price:15000}
+
+            ],
+
+            '✨ Depilação & Estética':[
+
+                {ref:22,name:'Depilação sobrancelhas com cera',price:3500},
+                {ref:23,name:'Buço',price:3000},
+                {ref:24,name:'Depilação nas axilas',price:5000},
+                {ref:25,name:'Depilação meia perna',price:7000}
+
+            ],
+
+            '🧖‍♀️ Spa & Corpo':[
+
+                {ref:29,name:'Sauna Blanket',price:15000},
+                {ref:30,name:'Cavitação',price:18000},
+                {ref:31,name:'Radiofrequência',price:18000},
+                {ref:32,name:'Velashape',price:25000},
+                {ref:33,name:'Massagem relaxante',price:20000}
+
+            ],
+
+            '💈 Barber & Masculino':[
+
+                {ref:38,name:'Corte de cabelo clássico',price:8000},
+                {ref:39,name:'Corte moderno / Fade',price:10000},
+                {ref:40,name:'Corte premium',price:12000},
+                {ref:42,name:'Barba simples',price:6000}
+
+            ],
+
+            '👑 Pacotes VIP':[
+
+                {ref:74,name:'VIP Member',price:90000},
+                {ref:75,name:'VIP Gold',price:150000},
+                {ref:76,name:'Maison Men Club',price:60000}
+
+            ],
+
+            '🧒 Kids Services':[
+
+                {ref:72,name:'Mini Spa Princess / Prince',price:20000},
+                {ref:73,name:'Dia de Festa',price:25000}
+
+            ],
+
+            '💄 Maquilhagem':[
+
+                {ref:104,name:'Make up Nude',price:10000},
+                {ref:105,name:'Make up Festas',price:15000},
+                {ref:106,name:'Make up Aniversários',price:18000},
+                {ref:107,name:'Make up Noivas',price:30000}
+
+            ],
+
+            '👁️ Cílios & Sobrancelhas':[
+
+                {ref:180,name:'Design de sobrancelhas',price:7500},
+                {ref:181,name:'Design com linha',price:10000},
+                {ref:182,name:'Design e henna',price:15000},
+                {ref:183,name:'Brow Lamination',price:35000},
+                {ref:189,name:'Mega volume',price:25000}
+
+            ]
+
+        }
+
+    },
+
+    computed:{
+
+        filteredServices(){
+
+            let result = {};
+
+            for(let category in this.categories){
+
+                if(
+                    this.selectedCategory &&
+                    category !== this.selectedCategory
+                ){
+                    continue;
+                }
+
+                let filtered = this.categories[category].filter(item =>
+
+                    item.name.toLowerCase()
+                    .includes(this.search.toLowerCase())
+
+                );
+
+                if(filtered.length){
+
+                    result[category] = filtered;
+
+                }
+
+            }
+
+            return result;
+
+        },
+
+        totalFilteredServices(){
+
+            let total = 0;
+
+            for(let category in this.filteredServices){
+
+                total += this.filteredServices[category].length;
+
+            }
+
+            return total;
+
+        }
+
+    },
+
+    methods:{
+
+        formatPrice(value){
+
+            return value.toLocaleString('pt-PT');
+
+        }
+
+    }
+
+});
+
 </script>
 
 </body>

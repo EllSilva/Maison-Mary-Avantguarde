@@ -1,13 +1,13 @@
 <div>
 
-      <div>
+    <div>
         <transition name="slide-side">
             <div class="modal-overlay" v-if="mostrarModal" @click.self="mostrarModal = false">
                 <div class="modal-container">
                     <p-reserva></p-reserva>
- 
 
-                        <button class="close-btn" @click.self="mostrarModal = false">✕</button>
+
+                    <button class="close-btn" @click.self="mostrarModal = false">✕</button>
 
                 </div>
             </div>
@@ -16,7 +16,7 @@
     </div>
 
 
-    
+
     <header class="hero-section-unhas">
         <div class="container">
             <div class="row">
@@ -25,15 +25,17 @@
                     <h1 class="hero-title mb-4"><em>Sofisticação até à ponta dos dedos </em></h1>
 
                     <p class="lead mb-5 text-white-50" style="max-width: 500px;">
-                       Experimente o conceito de alta costura para as suas unhas. Rituais de spa, alongamentos avançados e nail art minimalista com biossegurança rigorosa.
+                        Experimente o conceito de alta costura para as suas unhas. Rituais de spa, alongamentos
+                        avançados e nail art minimalista com biossegurança rigorosa.
                     </p>
                     <div class="d-flex flex-wrap gap-3">
-                    
-                                <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira / Horário</a>
-                        <a href="#/unhas" class="btn btn-primary btn-custom-outline mb-2">Serviços de Cabelo</a>
-                    
-                        </div>
-                    
+
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira /
+                            Horário</a>
+                        <a href="#/cabelo" class="btn btn-primary btn-custom-outline mb-2">Serviços de Cabelo</a>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -50,7 +52,9 @@
                     <h2 class="font-dancing-script text-primary">Mãos & Pés Perfeitos</h2>
 
                     <h2 class="section-title">Beleza, Elegância e Bem-Estar em Cada Detalhe.</h2>
-                    <p class="text-muted mb-5">Oferecemos cuidados especializados para mãos e pés, combinando técnicas modernas, produtos de alta qualidade e protocolos rigorosos de higiene para resultados impecáveis e duradouros.</p>
+                    <p class="text-muted mb-5">Oferecemos cuidados especializados para mãos e pés, combinando técnicas
+                        modernas, produtos de alta qualidade e protocolos rigorosos de higiene para resultados
+                        impecáveis e duradouros.</p>
 
                     <div class="mb-4" v-for="(item, index) in diferenciais" :key="index">
                         <h5 class="font-weight-bold text-dark mb-2">{{ item.titulo }}</h5>
@@ -61,11 +65,11 @@
         </div>
     </section>
 
-     <section class="section-padding">
+    <section class="section-padding">
         <div class="container">
 
             <div class="text-center mb-5">
- 
+
                 <h2 class="section-title">Serviços Especializados</h2>
             </div>
 
@@ -81,8 +85,8 @@
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[0].descricao }}</p>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
-                        <a href="#" class="btn btn-navy">Agendar</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira /
+                            Horário</a>
                     </div>
                 </div>
             </div>
@@ -101,8 +105,9 @@
                     </div>
                     <p class="text-muted mb-4">{{ tratamentos[1].descricao }}</p>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-navy mr-3">Saber Mais</a>
-                        <a href="#" class="btn btn-navy">Agendar</a>
+                        <a @click="mostrarModal = true" class="btn btn-primary flex-shrink-0">Reservar Cadeira /
+                            Horário</a>
+
                     </div>
                 </div>
             </div>
@@ -123,7 +128,8 @@
                 <div class="">
 
                     <p>
-                        Descubra os nossos serviços de manicure, pedicure, alongamentos e esmaltação premium. Faça o download do catálogo em PDF e encontre a opção ideal para si.
+                        Descubra os nossos serviços de manicure, pedicure, alongamentos e esmaltação premium. Faça o
+                        download do catálogo em PDF e encontre a opção ideal para si.
                     </p>
                     <a :href="pdfUrl" download class="btn btn-primary text-uppercase px-5 py-2 mr-3 mb-2">
                         📄 Baixar Tabela de Preços

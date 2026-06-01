@@ -14,7 +14,8 @@
                 <div class="form-group">
                     <input v-model="email" type="email" placeholder="Seu e-mail" required>
                 </div>
-                <div class="form-group">
+                <div class="d-flex">
+                      <div class="form-group">
                     <input v-model="dataConsulta" type="text" placeholder="Selecione a data" onfocus="(this.type='date')"
                         onblur="(this.type='text')">
                 </div>
@@ -22,6 +23,8 @@
                     <input v-model="horaConsulta" type="text" placeholder="Selecione a hora" onfocus="(this.type='time')"
                         onblur="(this.type='text')">
                 </div>
+                </div>
+              
                 <div class="form-group">
                     <select v-model="servico" required class="form-controlxx">
                         <option value="">Selecione um serviço</option>
